@@ -23,11 +23,11 @@ class ProductDetailsVC: UIViewController {
     @IBOutlet weak var priceTextField: UITextField!
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
