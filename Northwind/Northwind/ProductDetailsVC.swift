@@ -19,14 +19,22 @@ class ProductDetailsVC: UIViewController {
         let productName : String
         let productPrice : Double
     }
-    @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var productPriceLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        productNameLabel.text = item?.productName
-        productPriceLabel.text = String(describing: (item?.productPrice)!)
+        nameTextField.text = item?.productName
+        priceTextField.text = String(describing: (item?.productPrice)!)
     }
     
     func configure(with item: Configuration?) {
