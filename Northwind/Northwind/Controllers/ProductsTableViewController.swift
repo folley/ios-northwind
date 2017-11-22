@@ -6,30 +6,76 @@
 //
 
 import UIKit
+import CoreData
 
-class ProductsTableViewController: UITableViewController {
+class ProductsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    
+    var _fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult> {
+        if self._fetchedResultsController != nil {
+            return self._fetchedResultsController!
+        }
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let sort = NSSortDescriptor(key: "productName", ascending: true)
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+        fetchRequest.sortDescriptors = [sort];
+        
+        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedContext, sectionNameKeyPath: nil, cacheName: nil)
+        aFetchedResultsController.delegate = self
+        self._fetchedResultsController = aFetchedResultsController
+        
+        do {
+            try self._fetchedResultsController!.performFetch()
+        }
+        catch let error as NSError {
+            print("\(error.localizedDescription)")
+        }
+        
+        return self._fetchedResultsController!
+    }
     
     var model = [("Baklazan", Double(123.12)), ("Frytki", Double(21.31))]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let managedContext = self.fetchedResultsController.managedObjectContext
+
+        let entity = NSEntityDescription.entity(forEntityName: "Product", in: managedContext)
+        let product = NSManagedObject(entity: entity!, insertInto: managedContext)
+
+        product.setValue("Kabanos", forKey: "productName")
+        product.setValue(Double(2.79), forKey: "unitPrice")
+
+        do {
+            try managedContext.save()
+        }
+        catch let error as NSError {
+            print("\(error)")
+        }
+        
         self.tableView.register(UINib.init(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
+
     }
 
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.count
+        let info = self.fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
+        return info.numberOfObjects
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
-        cell.productNameLabel.text = model[indexPath.row].0
-        cell.priceLabel.text = String(model[indexPath.row].1)
+        
+        let product = self.fetchedResultsController.object(at: indexPath) as! Product
+        
+        cell.productNameLabel.text = product.productName
+        cell.priceLabel.text = String(describing: (product.unitPrice)!)
         
         return cell
     }
@@ -44,5 +90,17 @@ class ProductsTableViewController: UITableViewController {
         vc.item = config
         
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    // MARK: NSFetchedRequestControllerDelegate
+    
+    func controllerWillChangeContent(controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    }
+    
+    func controller(controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChangeObject object: AnyObject,
+                    atIndexPath indexPath: NSIndexPath?,
+                    forChangeType type: NSFetchedResultsChangeType,
+                    newIndexPath: NSIndexPath?) {
     }
 }

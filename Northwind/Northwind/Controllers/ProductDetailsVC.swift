@@ -19,6 +19,7 @@ class ProductDetailsVC: UIViewController {
         let productName : String
         let productPrice : Double
     }
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     
