@@ -86,8 +86,9 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ProductDetailsVC") as! ProductDetailsVC
         
-        let config = ProductDetailsVC.Configuration.init(productName: model[indexPath.row].0,
-                                                         productPrice: model[indexPath.row].1)
+        let product = self.fetchedResultsController.object(at: indexPath) as! Product
+        
+        let config = ProductDetailsVC.Configuration.init(product:product)
         
         vc.item = config
         

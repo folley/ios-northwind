@@ -16,8 +16,7 @@ class ProductDetailsVC: UIViewController {
     }
     
     public struct Configuration {
-        let productName : String
-        let productPrice : Double
+        let product : Product
     }
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -34,11 +33,11 @@ class ProductDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameTextField.text = item?.productName
-        priceTextField.text = String(describing: (item?.productPrice)!)
+        nameTextField.text = item?.product.productName
+        priceTextField.text = String(describing: (item?.product.unitPrice)!)
     }
     
     func configure(with item: Configuration?) {
-        self.title = item?.productName
+        self.title = item?.product.productName
     }
 }
