@@ -38,7 +38,7 @@
             </objects>
             <point key="canvasLocation" x="479.19999999999999" y="132.68365817091455"/>
         </scene>
-        <!--Products Table View Controller-->
+        <!--Title-->
         <scene sceneID="rmg-Mg-gbb">
             <objects>
                 <tableViewController id="Q2f-JJ-epr" customClass="ProductsTableViewController" customModule="Northwind" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,6 +61,13 @@
                             <outlet property="delegate" destination="Q2f-JJ-epr" id="6Gt-2c-JDB"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="9kn-Kh-Stf">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Rqe-uF-R6g">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="Q2f-JJ-epr" id="CzP-1k-1yC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BE-11-v7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
