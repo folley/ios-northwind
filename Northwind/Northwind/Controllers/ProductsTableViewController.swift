@@ -48,7 +48,7 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
         let product = NSManagedObject(entity: entity!, insertInto: managedContext)
         
         product.setValue("Kabanos", forKey: "productName")
-        product.setValue(Double(2.79), forKey: "unitPrice")
+        product.setValue(Double(arc4random_uniform(123)), forKey: "unitPrice")
         
         do {
             try managedContext.save()
@@ -56,6 +56,8 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
         catch let error as NSError {
             print("\(error)")
         }
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
