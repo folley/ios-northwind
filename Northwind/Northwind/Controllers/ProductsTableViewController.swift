@@ -40,26 +40,28 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
     
     var model = [("Baklazan", Double(123.12)), ("Frytki", Double(21.31))]
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func addButtonTapped(_ sender: Any) {
         
         let managedContext = self.fetchedResultsController.managedObjectContext
-
+        
         let entity = NSEntityDescription.entity(forEntityName: "Product", in: managedContext)
         let product = NSManagedObject(entity: entity!, insertInto: managedContext)
-
+        
         product.setValue("Kabanos", forKey: "productName")
         product.setValue(Double(2.79), forKey: "unitPrice")
-
+        
         do {
             try managedContext.save()
         }
         catch let error as NSError {
             print("\(error)")
         }
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
         self.tableView.register(UINib.init(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
-
     }
 
     // MARK: - Table view data source
