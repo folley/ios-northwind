@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import CoreData
 
-class ProductDetailsVC: UIViewController {
+class ProductDetailsVC: UITableViewController {
 
     var item : Configuration? {
         didSet {
@@ -61,5 +62,31 @@ class ProductDetailsVC: UIViewController {
     
     func configure(with item: Configuration?) {
         self.title = item?.product.productName
+    }
+}
+
+extension ProductDetailsVC {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 &&
+            indexPath.row == 2 {
+            // Category
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "PickerVC") as! ObjectPickerViewController
+            vc.entityName = "Product"
+            vc.sortKey = "productName"
+            vc.delegate = self
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}
+
+extension ProductDetailsVC: ObjectPickerDelegate {
+    func objectPicker(_ picker: ObjectPickerViewController, didPickItem: NSManagedObject) {
+        navigationController?.popToViewController(self, animated: true)
+        
+        print("did pick: \(item)")
+        if picker.entityName == "Category" {
+            
+        }
     }
 }

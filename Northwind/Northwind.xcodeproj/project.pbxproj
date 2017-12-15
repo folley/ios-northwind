@@ -19,6 +19,7 @@
 		90E297F11F9B36BD00193B1F /* Northwind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90E297EF1F9B36BD00193B1F /* Northwind.xcdatamodeld */; };
 		90E297F31F9B36BD00193B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90E297F21F9B36BD00193B1F /* Assets.xcassets */; };
 		90E297F61F9B36BD00193B1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E297F41F9B36BD00193B1F /* LaunchScreen.storyboard */; };
+		90F51D211FE47536003AC266 /* ObjectPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F51D201FE47536003AC266 /* ObjectPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		90E297F21F9B36BD00193B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90E297F51F9B36BD00193B1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90E297F71F9B36BD00193B1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90F51D201FE47536003AC266 /* ObjectPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				90E297EA1F9B36BD00193B1F /* ViewController.swift */,
 				1D682C671FE074BE0090CEB0 /* ProductsTableViewController.swift */,
 				1D682C751FE08F5C0090CEB0 /* ProductDetailsVC.swift */,
+				90F51D201FE47536003AC266 /* ObjectPickerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				1D682C681FE074BE0090CEB0 /* ProductsTableViewController.swift in Sources */,
 				1D3AD73E1FE1DFD1005F6DE3 /* Product.swift in Sources */,
 				1D682C6B1FE077160090CEB0 /* ProductCell.swift in Sources */,
+				90F51D211FE47536003AC266 /* ObjectPickerViewController.swift in Sources */,
 				90E297E91F9B36BD00193B1F /* AppDelegate.swift in Sources */,
 				1D3AD73F1FE1DFD1005F6DE3 /* Product+CoreDataProperties.swift in Sources */,
 				90E297F11F9B36BD00193B1F /* Northwind.xcdatamodeld in Sources */,
