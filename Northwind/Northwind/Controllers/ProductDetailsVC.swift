@@ -25,6 +25,7 @@ class ProductDetailsVC: UIViewController {
     @IBAction func deleteButtonTapped(_ sender: Any) {
         if let product = item?.product {
             product.managedObjectContext?.delete(product)
+            product.managedObjectContext?.northwindSave()
         }
         self.navigationController?.popViewController(animated: true)
     }
@@ -42,14 +43,20 @@ class ProductDetailsVC: UIViewController {
     
     @IBAction func nameDidChange(_ sender: UITextField) {
         item?.product.productName = sender.text
+        save()
     }
     
     @IBAction func priceDidChange(_ sender: UITextField) {
         if let text = sender.text {
             if let value = Double(text) {
                 item?.product.unitPrice = NSDecimalNumber(value: value)
+                save()
             }
         }
+    }
+    
+    private func save() {
+        item?.product.managedObjectContext?.northwindSave()
     }
     
     func configure(with item: Configuration?) {

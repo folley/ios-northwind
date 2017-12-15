@@ -33,31 +33,31 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
         return aFetchedResultsController
     }()
     
-    var model = [("Baklazan", Double(123.12)), ("Frytki", Double(21.31))]
-
     @IBAction func addButtonTapped(_ sender: Any) {
         
         let managedContext = self.fetchedResultsController.managedObjectContext
         
         let entity = NSEntityDescription.entity(forEntityName: "Product", in: managedContext)
         let product = Product(entity: entity!, insertInto: managedContext)
-        product.productName = "Kabanos"
-        product.unitPrice = NSDecimalNumber(value: arc4random_uniform(123))
+        product.productName = "Product Name"
+        product.unitPrice = NSDecimalNumber(value: 0)
+        managedContext.northwindSave()
         
-        do {
-            try managedContext.save()
-        }
-        catch let error as NSError {
-            print("\(error)")
-        }
-        
-        self.navigationController?.popViewController(animated: true)
+        showDetailsFor(product: product)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
         tableView.register(UINib.init(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
+    }
+    
+    private func showDetailsFor(product: Product) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProductDetailsVC") as! ProductDetailsVC
+        let config = ProductDetailsVC.Configuration.init(product:product)
+        vc.item = config
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     // MARK: - Table view data source
@@ -79,16 +79,8 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ProductDetailsVC") as! ProductDetailsVC
-        
         let product = self.fetchedResultsController.object(at: indexPath)
-        
-        let config = ProductDetailsVC.Configuration.init(product:product)
-        
-        vc.item = config
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+        showDetailsFor(product: product)
     }
     
     // MARK: NSFetchedRequestControllerDelegate
