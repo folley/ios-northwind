@@ -17,7 +17,6 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
         let sort = NSSortDescriptor(key: "productName", ascending: true)
         let fetchRequest = NSFetchRequest<Product>(entityName: "Product")
         fetchRequest.sortDescriptors = [sort];
-        
         let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                                    managedObjectContext: managedContext,
                                                                    sectionNameKeyPath: nil,
@@ -58,7 +57,7 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.tableView.register(UINib.init(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
+        tableView.register(UINib.init(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
     }
 
     // MARK: - Table view data source
@@ -107,6 +106,23 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
     }
 
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
+}
+
+extension ProductsTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count > 0 {
+            fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "productName CONTAINS[cd] %@", searchText)
+        } else {
+            fetchedResultsController.fetchRequest.predicate = nil
+        }
+        try! fetchedResultsController.performFetch()
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+
 }
