@@ -10,33 +10,29 @@ import CoreData
 
 class ProductsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    var _fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
-    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult> {
-        if self._fetchedResultsController != nil {
-            return self._fetchedResultsController!
-        }
-        
+    lazy var fetchedResultsController: NSFetchedResultsController<Product> = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
         let sort = NSSortDescriptor(key: "productName", ascending: true)
-        
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+        let fetchRequest = NSFetchRequest<Product>(entityName: "Product")
         fetchRequest.sortDescriptors = [sort];
         
-        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: managedContext, sectionNameKeyPath: nil, cacheName: nil)
+        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                                   managedObjectContext: managedContext,
+                                                                   sectionNameKeyPath: nil,
+                                                                   cacheName: nil)
         aFetchedResultsController.delegate = self
-        self._fetchedResultsController = aFetchedResultsController
         
         do {
-            try self._fetchedResultsController!.performFetch()
+            try aFetchedResultsController.performFetch()
         }
         catch let error as NSError {
             print("\(error.localizedDescription)")
         }
         
-        return self._fetchedResultsController!
-    }
+        return aFetchedResultsController
+    }()
     
     var model = [("Baklazan", Double(123.12)), ("Frytki", Double(21.31))]
 
@@ -45,10 +41,9 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
         let managedContext = self.fetchedResultsController.managedObjectContext
         
         let entity = NSEntityDescription.entity(forEntityName: "Product", in: managedContext)
-        let product = NSManagedObject(entity: entity!, insertInto: managedContext)
-        
-        product.setValue("Kabanos", forKey: "productName")
-        product.setValue(Double(arc4random_uniform(123)), forKey: "unitPrice")
+        let product = Product(entity: entity!, insertInto: managedContext)
+        product.productName = "Kabanos"
+        product.unitPrice = NSDecimalNumber(value: arc4random_uniform(123))
         
         do {
             try managedContext.save()
@@ -76,7 +71,7 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
         
-        let product = self.fetchedResultsController.object(at: indexPath) as! Product
+        let product = self.fetchedResultsController.object(at: indexPath)
         
         cell.productNameLabel.text = product.productName
         cell.priceLabel.text = String(describing: (product.unitPrice)!)
@@ -88,7 +83,7 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ProductDetailsVC") as! ProductDetailsVC
         
-        let product = self.fetchedResultsController.object(at: indexPath) as! Product
+        let product = self.fetchedResultsController.object(at: indexPath)
         
         let config = ProductDetailsVC.Configuration.init(product:product)
         
@@ -99,13 +94,19 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
     
     // MARK: NSFetchedRequestControllerDelegate
     
-    func controllerWillChangeContent(controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        
     }
-    
-    func controller(controller: NSFetchedResultsController<NSFetchRequestResult>,
-                    didChangeObject object: AnyObject,
-                    atIndexPath indexPath: NSIndexPath?,
-                    forChangeType type: NSFetchedResultsChangeType,
-                    newIndexPath: NSIndexPath?) {
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+        
+    }
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.reloadData()
     }
 }
