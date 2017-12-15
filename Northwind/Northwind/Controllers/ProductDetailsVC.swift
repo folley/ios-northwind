@@ -23,6 +23,9 @@ class ProductDetailsVC: UIViewController {
     @IBOutlet weak var priceTextField: UITextField!
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
+        if let product = item?.product {
+            product.managedObjectContext?.delete(product)
+        }
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -35,6 +38,18 @@ class ProductDetailsVC: UIViewController {
         
         nameTextField.text = item?.product.productName
         priceTextField.text = String(describing: (item?.product.unitPrice)!)
+    }
+    
+    @IBAction func nameDidChange(_ sender: UITextField) {
+        item?.product.productName = sender.text
+    }
+    
+    @IBAction func priceDidChange(_ sender: UITextField) {
+        if let text = sender.text {
+            if let value = Double(text) {
+                item?.product.unitPrice = NSDecimalNumber(value: value)
+            }
+        }
     }
     
     func configure(with item: Configuration?) {
