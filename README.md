@@ -39,10 +39,10 @@ The application serves managers of magazines and shops with their day to day dut
 ### Application Flow
 Application flow corresponds to magazine employe work.
 
-~New order from client:~
+*New order from client:*
 Client calls to employe -> Employee will add a new order -> Employee will execute order
 
-~Views in application:~
+*Views in application:*
 1. Select Flow of work View (Products / Orders / Categories)
 2. Product List
 3. Orders List
@@ -51,17 +51,17 @@ Client calls to employe -> Employee will add a new order -> Employee will execut
 6. Order Details
 7. Categories Details
 
-~Sample flow of work:~
-1. Execute order: Employee opens the app and goes to ~New Orders View~. He selects an order and checks if all order components are available. Then he taps execute button to execute the order.
+*Sample flow of work:*
+1. Execute order: Employee opens the app and goes to *New Orders View*. He selects an order and checks if all order components are available. Then he taps execute button to execute the order.
 
-2. Change product details: Employee opens the app and goes to ~Products List View~. He uses search to find a specific product. He opens ~Product Details View~ where he is able to change details and save.
+2. Change product details: Employee opens the app and goes to *Products List View*. He uses search to find a specific product. He opens ~Product Details View~ where he is able to change details and save.
 
 
 ### Technology
 
-~iOS application~ is built it on top of Apple frameworks:
+*iOS application* is built it on top of Apple frameworks:
 1. Core Data
 2. Foundation
 3. UIKit
 
-~Database~ scheme is built on top of Northwind Database (a sample database that is shipped along with Microsoft Access application).
+*Database* scheme is built on top of Northwind Database (a sample database that is shipped along with Microsoft Access application).
