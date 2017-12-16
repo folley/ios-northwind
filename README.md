@@ -1,10 +1,9 @@
 # iOS Northwind Database Project
 
-Temat projektu
+### Temat projektu
 Celem projektu jest zaimplementowanie systemu realizującego wybrane podstawowe operacje w przykładowej bazie Northwind w wybranej technologii.
 
-np.
-
+### Ustalenia poczatkowe i scope projektu
 Operacje CRUD na wybranych tabelach
 Operacje składania zamówień na produkty 
 Operacje wyszukiwania informacji i raportowania (realizacja złożonych operacji SQL)
@@ -21,3 +20,48 @@ Technologia realizacji projektu do uzgodnienia z prowadzącym
 Technologie:
 Aplikacja mobilna, iOS
 Core Data
+
+### Core data introduction
+
+Core Data is a framework that you use to manage the model layer objects in your application. It provides generalised and automated solutions to common tasks associated with object lifecycle and object graph management, including persistence.
+
+Core Data can serialise objects into XML, Binary, or SQLite for storage.
+
+### Application Vision
+
+The application serves managers of magazines and shops with their day to day duties. It allows:
+1. Checking list of products
+2. Changing products details
+3. Checking new orders from clients
+4. Adding an order
+
+
+### Application Flow
+Application flow corresponds to magazine employe work.
+
+~New order from client:~
+Client calls to employe -> Employee will add a new order -> Employee will execute order
+
+~Views in application:~
+1. Select Flow of work View (Products / Orders / Categories)
+2. Product List
+3. Orders List
+4. Categories List
+5. Product Details
+6. Order Details
+7. Categories Details
+
+~Sample flow of work:~
+1. Execute order: Employee opens the app and goes to ~New Orders View~. He selects an order and checks if all order components are available. Then he taps execute button to execute the order.
+
+2. Change product details: Employee opens the app and goes to ~Products List View~. He uses search to find a specific product. He opens ~Product Details View~ where he is able to change details and save.
+
+
+### Technology
+
+~iOS application~ is built it on top of Apple frameworks:
+1. Core Data
+2. Foundation
+3. UIKit
+
+~Database~ scheme is built on top of Northwind Database (a sample database that is shipped along with Microsoft Access application).
