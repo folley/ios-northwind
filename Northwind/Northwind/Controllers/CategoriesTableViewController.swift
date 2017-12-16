@@ -53,6 +53,11 @@ class CategoriesTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     private func showDetailsFor(category: Category) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CategoryDetailsVC") as! CategoryDetailsVC
+        let config = CategoryDetailsVC.Configuration.init(category:category)
+        vc.item = config
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Table view data source
