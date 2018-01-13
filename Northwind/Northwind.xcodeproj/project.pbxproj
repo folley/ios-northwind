@@ -35,6 +35,7 @@
 		900EE0E12000D304002E0443 /* Region+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D42000D304002E0443 /* Region+CoreDataClass.swift */; };
 		900EE0E22000D304002E0443 /* Territory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D62000D304002E0443 /* Territory+CoreDataProperties.swift */; };
 		900EE0E32000D304002E0443 /* Territory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D72000D304002E0443 /* Territory+CoreDataClass.swift */; };
+		900EE0E52000D851002E0443 /* ItemEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0E42000D851002E0443 /* ItemEditViewController.swift */; };
 		900EE0E82001025F002E0443 /* TextEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0E62001025F002E0443 /* TextEditTableViewCell.swift */; };
 		900EE0E92001025F002E0443 /* TextEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900EE0E72001025F002E0443 /* TextEditTableViewCell.xib */; };
 		900EE0ED20010ED7002E0443 /* SingleRelationshipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0EB20010ED7002E0443 /* SingleRelationshipTableViewCell.swift */; };
@@ -83,6 +84,7 @@
 		900EE0D42000D304002E0443 /* Region+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Region+CoreDataClass.swift"; sourceTree = "<group>"; };
 		900EE0D62000D304002E0443 /* Territory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Territory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		900EE0D72000D304002E0443 /* Territory+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Territory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		900EE0E42000D851002E0443 /* ItemEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEditViewController.swift; sourceTree = "<group>"; };
 		900EE0E62001025F002E0443 /* TextEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditTableViewCell.swift; sourceTree = "<group>"; };
 		900EE0E72001025F002E0443 /* TextEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextEditTableViewCell.xib; sourceTree = "<group>"; };
 		900EE0EB20010ED7002E0443 /* SingleRelationshipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRelationshipTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				1D682C751FE08F5C0090CEB0 /* ProductDetailsVC.swift */,
 				1DF22A821FE52F2700A12744 /* CategoryDetailsVC.swift */,
 				90F51D201FE47536003AC266 /* ObjectPickerViewController.swift */,
+				900EE0E42000D851002E0443 /* ItemEditViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				900EE0DD2000D304002E0443 /* Order+CoreDataClass.swift in Sources */,
 				900EE0D92000D304002E0443 /* Supplier+CoreDataProperties.swift in Sources */,
 				1D682C681FE074BE0090CEB0 /* ProductsTableViewController.swift in Sources */,
+				900EE0E52000D851002E0443 /* ItemEditViewController.swift in Sources */,
 				900EE0DF2000D304002E0443 /* Shipper+CoreDataProperties.swift in Sources */,
 				900EE0B62000D208002E0443 /* Employee+CoreDataProperties.swift in Sources */,
 				1D3AD73E1FE1DFD1005F6DE3 /* Product.swift in Sources */,
