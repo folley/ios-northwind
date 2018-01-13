@@ -35,6 +35,8 @@
 		900EE0E12000D304002E0443 /* Region+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D42000D304002E0443 /* Region+CoreDataClass.swift */; };
 		900EE0E22000D304002E0443 /* Territory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D62000D304002E0443 /* Territory+CoreDataProperties.swift */; };
 		900EE0E32000D304002E0443 /* Territory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D72000D304002E0443 /* Territory+CoreDataClass.swift */; };
+		900EE0E82001025F002E0443 /* TextEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0E62001025F002E0443 /* TextEditTableViewCell.swift */; };
+		900EE0E92001025F002E0443 /* TextEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900EE0E72001025F002E0443 /* TextEditTableViewCell.xib */; };
 		90E297E91F9B36BD00193B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E297E81F9B36BD00193B1F /* AppDelegate.swift */; };
 		90E297EB1F9B36BD00193B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E297EA1F9B36BD00193B1F /* ViewController.swift */; };
 		90E297EE1F9B36BD00193B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E297EC1F9B36BD00193B1F /* Main.storyboard */; };
@@ -73,6 +75,8 @@
 		900EE0D42000D304002E0443 /* Region+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Region+CoreDataClass.swift"; sourceTree = "<group>"; };
 		900EE0D62000D304002E0443 /* Territory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Territory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		900EE0D72000D304002E0443 /* Territory+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Territory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		900EE0E62001025F002E0443 /* TextEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditTableViewCell.swift; sourceTree = "<group>"; };
+		900EE0E72001025F002E0443 /* TextEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextEditTableViewCell.xib; sourceTree = "<group>"; };
 		90E297E51F9B36BD00193B1F /* Northwind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Northwind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E297E81F9B36BD00193B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90E297EA1F9B36BD00193B1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +239,15 @@
 			path = Territory;
 			sourceTree = "<group>";
 		};
+		900EE0EA20010263002E0443 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				900EE0E62001025F002E0443 /* TextEditTableViewCell.swift */,
+				900EE0E72001025F002E0443 /* TextEditTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		90E297DC1F9B36BC00193B1F = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +342,7 @@
 				1D682C6C1FE077160090CEB0 /* ProductCell.xib in Resources */,
 				90E297F31F9B36BD00193B1F /* Assets.xcassets in Resources */,
 				90E297EE1F9B36BD00193B1F /* Main.storyboard in Resources */,
+				900EE0E92001025F002E0443 /* TextEditTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +379,7 @@
 				900EE0C32000D2F3002E0443 /* CustomerDemographic+CoreDataProperties.swift in Sources */,
 				900EE0D82000D304002E0443 /* Supplier+CoreDataClass.swift in Sources */,
 				90E297E91F9B36BD00193B1F /* AppDelegate.swift in Sources */,
+				900EE0E82001025F002E0443 /* TextEditTableViewCell.swift in Sources */,
 				1D3AD73F1FE1DFD1005F6DE3 /* Product+CoreDataProperties.swift in Sources */,
 				900EE0E22000D304002E0443 /* Territory+CoreDataProperties.swift in Sources */,
 				90E297F11F9B36BD00193B1F /* Northwind.xcdatamodeld in Sources */,
