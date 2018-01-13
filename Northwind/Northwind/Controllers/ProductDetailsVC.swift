@@ -22,6 +22,8 @@ class ProductDetailsVC: UITableViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var categoryNameLabel: UILabel!
+    @IBOutlet weak var supplierNameLabel: UILabel!
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
         if let product = item?.product {
@@ -31,15 +33,19 @@ class ProductDetailsVC: UITableViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameTextField.text = item?.product.productName
-        priceTextField.text = String(describing: (item?.product.unitPrice)!)
+        refreshUI()
+    }
+    
+    fileprivate func refreshUI() {
+        let product = item!.product
+        nameTextField.text = product.productName
+        priceTextField.text = String(describing: (product.unitPrice)!)
+        categoryNameLabel.text = product.category?.categoryName
+        supplierNameLabel.text = product.supplier?.companyName
+        tableView.reloadData()
     }
     
     @IBAction func nameDidChange(_ sender: UITextField) {
@@ -63,30 +69,34 @@ class ProductDetailsVC: UITableViewController {
     func configure(with item: Configuration?) {
         self.title = item?.product.productName
     }
-}
-
-extension ProductDetailsVC {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 &&
-            indexPath.row == 2 {
-            // Category
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "PickerVC") as! ObjectPickerViewController
-            vc.entityName = "Product"
-            vc.sortKey = "productName"
-            vc.delegate = self
-            navigationController?.pushViewController(vc, animated: true)
-        }
+    
+    @IBAction func didTapCategory(_ sender: UITapGestureRecognizer) {
+        showPicker(configuration: Category.pickerConfiguration())
+    }
+    
+    @IBAction func didTapSupplier(_ sender: UITapGestureRecognizer) {
+        showPicker(configuration: Supplier.pickerConfiguration())
+    }
+    
+    private func showPicker(configuration: PickerConfiguration) {
+        let vc = UIStoryboard.pickerVC()
+        vc.configuration = configuration
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 extension ProductDetailsVC: ObjectPickerDelegate {
-    func objectPicker(_ picker: ObjectPickerViewController, didPickItem: NSManagedObject) {
+    func objectPicker(_ picker: ObjectPickerViewController, didPick item: NSManagedObject) {
         navigationController?.popToViewController(self, animated: true)
         
-        print("did pick: \(item)")
-        if picker.entityName == "Category" {
-            
+        if let category = item as? Category {
+            self.item?.product.category = category
         }
+        else if let supplier = item as? Supplier {
+            self.item?.product.supplier = supplier
+        }
+        
+        refreshUI()
     }
 }

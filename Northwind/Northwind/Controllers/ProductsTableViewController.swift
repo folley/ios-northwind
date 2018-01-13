@@ -53,6 +53,39 @@ class ProductsTableViewController: UITableViewController, NSFetchedResultsContro
     }
     
     private func showDetailsFor(product: Product) {
+        let items = [ItemEditConfiguration<Product>.Item(keyPath: \Product.productName,
+                                                         name: "Product Name"),
+                     ItemEditConfiguration<Product>.Item(keyPath: \Product.discontinued,
+                                                         name: "Discontinued"),
+                     
+                     
+                     ItemEditConfiguration<Product>.Item(keyPath: \Product.quantityPerUnit,
+                                                         name: "Quantity Per Unit"),
+                     ItemEditConfiguration<Product>.Item(keyPath: \Product.reorderLevel,
+                                                         name: "Reorder Level"),
+                     ItemEditConfiguration<Product>.Item(keyPath: \Product.unitPrice,
+                                                         name: "Unit Price"),
+                     ItemEditConfiguration<Product>.Item(keyPath: \Product.unitsInStock,
+                                                         name: "Units In Stock"),
+                     ItemEditConfiguration<Product>.Item(keyPath: \Product.unitsOnOrder,
+                                                         name: "Units On Order"),
+                     
+                     ItemEditConfiguration<Product>.Item(keyPath: \Product.category,
+                                                         name: "Category",
+                                                         writeKeyPath: "category",
+                                                         customClass: Category.classForCoder()),
+                     ItemEditConfiguration<Product>.Item(keyPath: \Product.supplier,
+                                                         name: "Supplier",
+                                                         writeKeyPath: "supplier",
+                                                         customClass: Supplier.classForCoder())
+            ]
+        let configuration = ItemEditConfiguration(object: product,
+                                                  items: items)
+        let editVC = ItemEditViewController<Product>(style: .grouped)
+        editVC.configuration = configuration
+        self.navigationController?.pushViewController(editVC, animated: true)
+        return
+        
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ProductDetailsVC") as! ProductDetailsVC
         let config = ProductDetailsVC.Configuration.init(product:product)
