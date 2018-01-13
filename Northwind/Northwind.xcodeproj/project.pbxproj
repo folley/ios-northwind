@@ -17,6 +17,24 @@
 		1DF22A801FE4806800A12744 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A7E1FE4806800A12744 /* Category.swift */; };
 		1DF22A811FE4806800A12744 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A7F1FE4806800A12744 /* Category+CoreDataProperties.swift */; };
 		1DF22A831FE52F2700A12744 /* CategoryDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A821FE52F2700A12744 /* CategoryDetailsVC.swift */; };
+		900EE0B62000D208002E0443 /* Employee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0AE2000D208002E0443 /* Employee+CoreDataProperties.swift */; };
+		900EE0B72000D208002E0443 /* Employee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0AF2000D208002E0443 /* Employee+CoreDataClass.swift */; };
+		900EE0C22000D2F3002E0443 /* CustomerDemographic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0BD2000D2F2002E0443 /* CustomerDemographic+CoreDataClass.swift */; };
+		900EE0C32000D2F3002E0443 /* CustomerDemographic+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0BE2000D2F2002E0443 /* CustomerDemographic+CoreDataProperties.swift */; };
+		900EE0C42000D2F3002E0443 /* Customer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0C02000D2F2002E0443 /* Customer+CoreDataClass.swift */; };
+		900EE0C52000D2F3002E0443 /* Customer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0C12000D2F2002E0443 /* Customer+CoreDataProperties.swift */; };
+		900EE0D82000D304002E0443 /* Supplier+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0C72000D303002E0443 /* Supplier+CoreDataClass.swift */; };
+		900EE0D92000D304002E0443 /* Supplier+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0C82000D303002E0443 /* Supplier+CoreDataProperties.swift */; };
+		900EE0DA2000D304002E0443 /* OrderDetails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0CA2000D303002E0443 /* OrderDetails+CoreDataProperties.swift */; };
+		900EE0DB2000D304002E0443 /* OrderDetails+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0CB2000D303002E0443 /* OrderDetails+CoreDataClass.swift */; };
+		900EE0DC2000D304002E0443 /* Order+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0CD2000D303002E0443 /* Order+CoreDataProperties.swift */; };
+		900EE0DD2000D304002E0443 /* Order+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0CE2000D303002E0443 /* Order+CoreDataClass.swift */; };
+		900EE0DE2000D304002E0443 /* Shipper+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D02000D303002E0443 /* Shipper+CoreDataClass.swift */; };
+		900EE0DF2000D304002E0443 /* Shipper+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D12000D303002E0443 /* Shipper+CoreDataProperties.swift */; };
+		900EE0E02000D304002E0443 /* Region+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D32000D304002E0443 /* Region+CoreDataProperties.swift */; };
+		900EE0E12000D304002E0443 /* Region+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D42000D304002E0443 /* Region+CoreDataClass.swift */; };
+		900EE0E22000D304002E0443 /* Territory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D62000D304002E0443 /* Territory+CoreDataProperties.swift */; };
+		900EE0E32000D304002E0443 /* Territory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D72000D304002E0443 /* Territory+CoreDataClass.swift */; };
 		90E297E91F9B36BD00193B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E297E81F9B36BD00193B1F /* AppDelegate.swift */; };
 		90E297EB1F9B36BD00193B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E297EA1F9B36BD00193B1F /* ViewController.swift */; };
 		90E297EE1F9B36BD00193B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E297EC1F9B36BD00193B1F /* Main.storyboard */; };
@@ -37,6 +55,24 @@
 		1DF22A7E1FE4806800A12744 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		1DF22A7F1FE4806800A12744 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1DF22A821FE52F2700A12744 /* CategoryDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsVC.swift; sourceTree = "<group>"; };
+		900EE0AE2000D208002E0443 /* Employee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		900EE0AF2000D208002E0443 /* Employee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		900EE0BD2000D2F2002E0443 /* CustomerDemographic+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomerDemographic+CoreDataClass.swift"; sourceTree = "<group>"; };
+		900EE0BE2000D2F2002E0443 /* CustomerDemographic+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomerDemographic+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		900EE0C02000D2F2002E0443 /* Customer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Customer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		900EE0C12000D2F2002E0443 /* Customer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Customer+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		900EE0C72000D303002E0443 /* Supplier+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Supplier+CoreDataClass.swift"; sourceTree = "<group>"; };
+		900EE0C82000D303002E0443 /* Supplier+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Supplier+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		900EE0CA2000D303002E0443 /* OrderDetails+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderDetails+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		900EE0CB2000D303002E0443 /* OrderDetails+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OrderDetails+CoreDataClass.swift"; sourceTree = "<group>"; };
+		900EE0CD2000D303002E0443 /* Order+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		900EE0CE2000D303002E0443 /* Order+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataClass.swift"; sourceTree = "<group>"; };
+		900EE0D02000D303002E0443 /* Shipper+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Shipper+CoreDataClass.swift"; sourceTree = "<group>"; };
+		900EE0D12000D303002E0443 /* Shipper+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Shipper+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		900EE0D32000D304002E0443 /* Region+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Region+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		900EE0D42000D304002E0443 /* Region+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Region+CoreDataClass.swift"; sourceTree = "<group>"; };
+		900EE0D62000D304002E0443 /* Territory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Territory+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		900EE0D72000D304002E0443 /* Territory+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Territory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		90E297E51F9B36BD00193B1F /* Northwind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Northwind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E297E81F9B36BD00193B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90E297EA1F9B36BD00193B1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +98,15 @@
 		1D3AD7401FE1E010005F6DE3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				900EE0CC2000D303002E0443 /* Order */,
+				900EE0C92000D303002E0443 /* OrderDetails */,
+				900EE0D22000D304002E0443 /* Region */,
+				900EE0CF2000D303002E0443 /* Shipper */,
+				900EE0C62000D303002E0443 /* Supplier */,
+				900EE0D52000D304002E0443 /* Territory */,
+				900EE0BF2000D2F2002E0443 /* Customer */,
+				900EE0BC2000D2F2002E0443 /* CustomerDemographic */,
+				900EE0AD2000D208002E0443 /* Employee */,
 				1DF22A7D1FE4803D00A12744 /* Category */,
 				1D3AD7411FE1E016005F6DE3 /* Product */,
 			);
@@ -107,6 +152,87 @@
 			);
 			name = Category;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		900EE0AD2000D208002E0443 /* Employee */ = {
+			isa = PBXGroup;
+			children = (
+				900EE0AE2000D208002E0443 /* Employee+CoreDataProperties.swift */,
+				900EE0AF2000D208002E0443 /* Employee+CoreDataClass.swift */,
+			);
+			path = Employee;
+			sourceTree = "<group>";
+		};
+		900EE0BC2000D2F2002E0443 /* CustomerDemographic */ = {
+			isa = PBXGroup;
+			children = (
+				900EE0BD2000D2F2002E0443 /* CustomerDemographic+CoreDataClass.swift */,
+				900EE0BE2000D2F2002E0443 /* CustomerDemographic+CoreDataProperties.swift */,
+			);
+			path = CustomerDemographic;
+			sourceTree = "<group>";
+		};
+		900EE0BF2000D2F2002E0443 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				900EE0C02000D2F2002E0443 /* Customer+CoreDataClass.swift */,
+				900EE0C12000D2F2002E0443 /* Customer+CoreDataProperties.swift */,
+			);
+			path = Customer;
+			sourceTree = "<group>";
+		};
+		900EE0C62000D303002E0443 /* Supplier */ = {
+			isa = PBXGroup;
+			children = (
+				900EE0C72000D303002E0443 /* Supplier+CoreDataClass.swift */,
+				900EE0C82000D303002E0443 /* Supplier+CoreDataProperties.swift */,
+			);
+			path = Supplier;
+			sourceTree = "<group>";
+		};
+		900EE0C92000D303002E0443 /* OrderDetails */ = {
+			isa = PBXGroup;
+			children = (
+				900EE0CA2000D303002E0443 /* OrderDetails+CoreDataProperties.swift */,
+				900EE0CB2000D303002E0443 /* OrderDetails+CoreDataClass.swift */,
+			);
+			path = OrderDetails;
+			sourceTree = "<group>";
+		};
+		900EE0CC2000D303002E0443 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				900EE0CD2000D303002E0443 /* Order+CoreDataProperties.swift */,
+				900EE0CE2000D303002E0443 /* Order+CoreDataClass.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		900EE0CF2000D303002E0443 /* Shipper */ = {
+			isa = PBXGroup;
+			children = (
+				900EE0D02000D303002E0443 /* Shipper+CoreDataClass.swift */,
+				900EE0D12000D303002E0443 /* Shipper+CoreDataProperties.swift */,
+			);
+			path = Shipper;
+			sourceTree = "<group>";
+		};
+		900EE0D22000D304002E0443 /* Region */ = {
+			isa = PBXGroup;
+			children = (
+				900EE0D32000D304002E0443 /* Region+CoreDataProperties.swift */,
+				900EE0D42000D304002E0443 /* Region+CoreDataClass.swift */,
+			);
+			path = Region;
+			sourceTree = "<group>";
+		};
+		900EE0D52000D304002E0443 /* Territory */ = {
+			isa = PBXGroup;
+			children = (
+				900EE0D62000D304002E0443 /* Territory+CoreDataProperties.swift */,
+				900EE0D72000D304002E0443 /* Territory+CoreDataClass.swift */,
+			);
+			path = Territory;
 			sourceTree = "<group>";
 		};
 		90E297DC1F9B36BC00193B1F = {
@@ -213,19 +339,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				900EE0B72000D208002E0443 /* Employee+CoreDataClass.swift in Sources */,
 				1D682C761FE08F5C0090CEB0 /* ProductDetailsVC.swift in Sources */,
 				90E297EB1F9B36BD00193B1F /* ViewController.swift in Sources */,
 				1DF22A801FE4806800A12744 /* Category.swift in Sources */,
+				900EE0C42000D2F3002E0443 /* Customer+CoreDataClass.swift in Sources */,
+				900EE0E32000D304002E0443 /* Territory+CoreDataClass.swift in Sources */,
+				900EE0DC2000D304002E0443 /* Order+CoreDataProperties.swift in Sources */,
+				900EE0DD2000D304002E0443 /* Order+CoreDataClass.swift in Sources */,
+				900EE0D92000D304002E0443 /* Supplier+CoreDataProperties.swift in Sources */,
 				1D682C681FE074BE0090CEB0 /* ProductsTableViewController.swift in Sources */,
+				900EE0DF2000D304002E0443 /* Shipper+CoreDataProperties.swift in Sources */,
+				900EE0B62000D208002E0443 /* Employee+CoreDataProperties.swift in Sources */,
 				1D3AD73E1FE1DFD1005F6DE3 /* Product.swift in Sources */,
 				1D682C6B1FE077160090CEB0 /* ProductCell.swift in Sources */,
+				900EE0DE2000D304002E0443 /* Shipper+CoreDataClass.swift in Sources */,
+				900EE0E02000D304002E0443 /* Region+CoreDataProperties.swift in Sources */,
 				90F51D211FE47536003AC266 /* ObjectPickerViewController.swift in Sources */,
+				900EE0C52000D2F3002E0443 /* Customer+CoreDataProperties.swift in Sources */,
+				900EE0DA2000D304002E0443 /* OrderDetails+CoreDataProperties.swift in Sources */,
+				900EE0DB2000D304002E0443 /* OrderDetails+CoreDataClass.swift in Sources */,
 				1DF22A811FE4806800A12744 /* Category+CoreDataProperties.swift in Sources */,
+				900EE0C22000D2F3002E0443 /* CustomerDemographic+CoreDataClass.swift in Sources */,
 				1DF22A831FE52F2700A12744 /* CategoryDetailsVC.swift in Sources */,
+				900EE0C32000D2F3002E0443 /* CustomerDemographic+CoreDataProperties.swift in Sources */,
+				900EE0D82000D304002E0443 /* Supplier+CoreDataClass.swift in Sources */,
 				90E297E91F9B36BD00193B1F /* AppDelegate.swift in Sources */,
 				1D3AD73F1FE1DFD1005F6DE3 /* Product+CoreDataProperties.swift in Sources */,
+				900EE0E22000D304002E0443 /* Territory+CoreDataProperties.swift in Sources */,
 				90E297F11F9B36BD00193B1F /* Northwind.xcdatamodeld in Sources */,
 				1DF22A781FE4800000A12744 /* CategoriesTableViewController.swift in Sources */,
+				900EE0E12000D304002E0443 /* Region+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
