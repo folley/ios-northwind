@@ -49,6 +49,8 @@
 		90E297F11F9B36BD00193B1F /* Northwind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90E297EF1F9B36BD00193B1F /* Northwind.xcdatamodeld */; };
 		90E297F31F9B36BD00193B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90E297F21F9B36BD00193B1F /* Assets.xcassets */; };
 		90E297F61F9B36BD00193B1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E297F41F9B36BD00193B1F /* LaunchScreen.storyboard */; };
+		90E89C862000CB23002F10BE /* UIStoryboard+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E89C852000CB23002F10BE /* UIStoryboard+Utils.swift */; };
+		90E89C892000CB9B002F10BE /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E89C882000CB9B002F10BE /* Protocols.swift */; };
 		90F51D211FE47536003AC266 /* ObjectPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F51D201FE47536003AC266 /* ObjectPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		90E297F21F9B36BD00193B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90E297F51F9B36BD00193B1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90E297F71F9B36BD00193B1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90E89C852000CB23002F10BE /* UIStoryboard+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Utils.swift"; sourceTree = "<group>"; };
+		90E89C882000CB9B002F10BE /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		90F51D201FE47536003AC266 /* ObjectPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -290,6 +294,7 @@
 				1D3AD7401FE1E010005F6DE3 /* Model */,
 				1D3AD7431FE1E05C005F6DE3 /* Controllers */,
 				1D3AD7421FE1E056005F6DE3 /* Views */,
+				90E89C872000CB28002F10BE /* Utils */,
 				90E297EC1F9B36BD00193B1F /* Main.storyboard */,
 				90E297F21F9B36BD00193B1F /* Assets.xcassets */,
 				90E297F41F9B36BD00193B1F /* LaunchScreen.storyboard */,
@@ -297,6 +302,15 @@
 				90E297EF1F9B36BD00193B1F /* Northwind.xcdatamodeld */,
 			);
 			path = Northwind;
+			sourceTree = "<group>";
+		};
+		90E89C872000CB28002F10BE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				90E89C852000CB23002F10BE /* UIStoryboard+Utils.swift */,
+				90E89C882000CB9B002F10BE /* Protocols.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +391,7 @@
 			files = (
 				9048D6A620022EEE00089E01 /* NumberEditTableViewCell.swift in Sources */,
 				900EE0B72000D208002E0443 /* Employee+CoreDataClass.swift in Sources */,
+				90E89C892000CB9B002F10BE /* Protocols.swift in Sources */,
 				1D682C761FE08F5C0090CEB0 /* ProductDetailsVC.swift in Sources */,
 				900EE0ED20010ED7002E0443 /* SingleRelationshipTableViewCell.swift in Sources */,
 				90E297EB1F9B36BD00193B1F /* ViewController.swift in Sources */,
@@ -400,6 +415,7 @@
 				900EE0DB2000D304002E0443 /* OrderDetails+CoreDataClass.swift in Sources */,
 				1DF22A811FE4806800A12744 /* Category+CoreDataProperties.swift in Sources */,
 				900EE0C22000D2F3002E0443 /* CustomerDemographic+CoreDataClass.swift in Sources */,
+				90E89C862000CB23002F10BE /* UIStoryboard+Utils.swift in Sources */,
 				1DF22A831FE52F2700A12744 /* CategoryDetailsVC.swift in Sources */,
 				900EE0C32000D2F3002E0443 /* CustomerDemographic+CoreDataProperties.swift in Sources */,
 				900EE0D82000D304002E0443 /* Supplier+CoreDataClass.swift in Sources */,
