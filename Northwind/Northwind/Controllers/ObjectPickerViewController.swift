@@ -10,21 +10,26 @@ import CoreData
 
 protocol ObjectPickerDelegate: class {
     func objectPicker(_ picker: ObjectPickerViewController,
-                      didPickItem: NSManagedObject)
+                      didPick item: NSManagedObject)
+}
+
+struct PickerConfiguration {
+    var entityName: String
+    var sortKey: String
+    var descriptionKey: String
 }
 
 class ObjectPickerViewController: UITableViewController {
 
+    var configuration: PickerConfiguration!
     weak var delegate: ObjectPickerDelegate?
-    var entityName: String!
-    var sortKey: String!
     
     lazy var fetchedResultsController: NSFetchedResultsController<NSManagedObject> = {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
-        let sort = NSSortDescriptor(key: sortKey, ascending: true)
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName)
+        let sort = NSSortDescriptor(key: configuration.sortKey, ascending: true)
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: configuration.entityName)
         fetchRequest.sortDescriptors = [sort];
         let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                                    managedObjectContext: managedContext,
@@ -60,7 +65,7 @@ extension ObjectPickerViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         let item = fetchedResultsController.fetchedObjects![indexPath.item]
         
-        cell.textLabel?.text = indexPath.description
+        cell.textLabel?.text = item.value(forKey: configuration.descriptionKey) as? String
         
         return cell
     }
@@ -68,7 +73,7 @@ extension ObjectPickerViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = fetchedResultsController.fetchedObjects![indexPath.item]
         delegate?.objectPicker(self,
-                               didPickItem: item)
+                               didPick: item)
     }
 }
 

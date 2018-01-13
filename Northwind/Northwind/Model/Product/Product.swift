@@ -13,3 +13,14 @@ import CoreData
 public class Product: NSManagedObject {
 
 }
+
+extension Product: PickerModelDescription {
+    
+    static func pickerConfiguration() -> PickerConfiguration {
+        return PickerConfiguration(entityName: "Product",
+                                   sortKey: "productName",
+                                   descriptionKey: "productName")
+    }
+    
+}
+
