@@ -41,6 +41,8 @@
 		900EE0EE20010ED7002E0443 /* SingleRelationshipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900EE0EC20010ED7002E0443 /* SingleRelationshipTableViewCell.xib */; };
 		9048D6A220022D4600089E01 /* BoolEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9048D6A020022D4600089E01 /* BoolEditTableViewCell.swift */; };
 		9048D6A320022D4600089E01 /* BoolEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9048D6A120022D4600089E01 /* BoolEditTableViewCell.xib */; };
+		9048D6A620022EEE00089E01 /* NumberEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9048D6A420022EEE00089E01 /* NumberEditTableViewCell.swift */; };
+		9048D6A720022EEE00089E01 /* NumberEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9048D6A520022EEE00089E01 /* NumberEditTableViewCell.xib */; };
 		90E297E91F9B36BD00193B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E297E81F9B36BD00193B1F /* AppDelegate.swift */; };
 		90E297EB1F9B36BD00193B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E297EA1F9B36BD00193B1F /* ViewController.swift */; };
 		90E297EE1F9B36BD00193B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E297EC1F9B36BD00193B1F /* Main.storyboard */; };
@@ -85,6 +87,8 @@
 		900EE0EC20010ED7002E0443 /* SingleRelationshipTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleRelationshipTableViewCell.xib; sourceTree = "<group>"; };
 		9048D6A020022D4600089E01 /* BoolEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolEditTableViewCell.swift; sourceTree = "<group>"; };
 		9048D6A120022D4600089E01 /* BoolEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoolEditTableViewCell.xib; sourceTree = "<group>"; };
+		9048D6A420022EEE00089E01 /* NumberEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberEditTableViewCell.swift; sourceTree = "<group>"; };
+		9048D6A520022EEE00089E01 /* NumberEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberEditTableViewCell.xib; sourceTree = "<group>"; };
 		90E297E51F9B36BD00193B1F /* Northwind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Northwind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E297E81F9B36BD00193B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90E297EA1F9B36BD00193B1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +261,8 @@
 				900EE0EC20010ED7002E0443 /* SingleRelationshipTableViewCell.xib */,
 				9048D6A020022D4600089E01 /* BoolEditTableViewCell.swift */,
 				9048D6A120022D4600089E01 /* BoolEditTableViewCell.xib */,
+				9048D6A420022EEE00089E01 /* NumberEditTableViewCell.swift */,
+				9048D6A520022EEE00089E01 /* NumberEditTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -357,6 +363,7 @@
 				90E297F31F9B36BD00193B1F /* Assets.xcassets in Resources */,
 				90E297EE1F9B36BD00193B1F /* Main.storyboard in Resources */,
 				9048D6A320022D4600089E01 /* BoolEditTableViewCell.xib in Resources */,
+				9048D6A720022EEE00089E01 /* NumberEditTableViewCell.xib in Resources */,
 				900EE0E92001025F002E0443 /* TextEditTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9048D6A620022EEE00089E01 /* NumberEditTableViewCell.swift in Sources */,
 				900EE0B72000D208002E0443 /* Employee+CoreDataClass.swift in Sources */,
 				1D682C761FE08F5C0090CEB0 /* ProductDetailsVC.swift in Sources */,
 				900EE0ED20010ED7002E0443 /* SingleRelationshipTableViewCell.swift in Sources */,
