@@ -37,6 +37,8 @@
 		900EE0E32000D304002E0443 /* Territory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0D72000D304002E0443 /* Territory+CoreDataClass.swift */; };
 		900EE0E82001025F002E0443 /* TextEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0E62001025F002E0443 /* TextEditTableViewCell.swift */; };
 		900EE0E92001025F002E0443 /* TextEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900EE0E72001025F002E0443 /* TextEditTableViewCell.xib */; };
+		900EE0ED20010ED7002E0443 /* SingleRelationshipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0EB20010ED7002E0443 /* SingleRelationshipTableViewCell.swift */; };
+		900EE0EE20010ED7002E0443 /* SingleRelationshipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900EE0EC20010ED7002E0443 /* SingleRelationshipTableViewCell.xib */; };
 		90E297E91F9B36BD00193B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E297E81F9B36BD00193B1F /* AppDelegate.swift */; };
 		90E297EB1F9B36BD00193B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E297EA1F9B36BD00193B1F /* ViewController.swift */; };
 		90E297EE1F9B36BD00193B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E297EC1F9B36BD00193B1F /* Main.storyboard */; };
@@ -77,6 +79,8 @@
 		900EE0D72000D304002E0443 /* Territory+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Territory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		900EE0E62001025F002E0443 /* TextEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditTableViewCell.swift; sourceTree = "<group>"; };
 		900EE0E72001025F002E0443 /* TextEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextEditTableViewCell.xib; sourceTree = "<group>"; };
+		900EE0EB20010ED7002E0443 /* SingleRelationshipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRelationshipTableViewCell.swift; sourceTree = "<group>"; };
+		900EE0EC20010ED7002E0443 /* SingleRelationshipTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleRelationshipTableViewCell.xib; sourceTree = "<group>"; };
 		90E297E51F9B36BD00193B1F /* Northwind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Northwind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E297E81F9B36BD00193B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90E297EA1F9B36BD00193B1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 			children = (
 				900EE0E62001025F002E0443 /* TextEditTableViewCell.swift */,
 				900EE0E72001025F002E0443 /* TextEditTableViewCell.xib */,
+				900EE0EB20010ED7002E0443 /* SingleRelationshipTableViewCell.swift */,
+				900EE0EC20010ED7002E0443 /* SingleRelationshipTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90E297F61F9B36BD00193B1F /* LaunchScreen.storyboard in Resources */,
+				900EE0EE20010ED7002E0443 /* SingleRelationshipTableViewCell.xib in Resources */,
 				1D682C6C1FE077160090CEB0 /* ProductCell.xib in Resources */,
 				90E297F31F9B36BD00193B1F /* Assets.xcassets in Resources */,
 				90E297EE1F9B36BD00193B1F /* Main.storyboard in Resources */,
@@ -355,6 +362,7 @@
 			files = (
 				900EE0B72000D208002E0443 /* Employee+CoreDataClass.swift in Sources */,
 				1D682C761FE08F5C0090CEB0 /* ProductDetailsVC.swift in Sources */,
+				900EE0ED20010ED7002E0443 /* SingleRelationshipTableViewCell.swift in Sources */,
 				90E297EB1F9B36BD00193B1F /* ViewController.swift in Sources */,
 				1DF22A801FE4806800A12744 /* Category.swift in Sources */,
 				900EE0C42000D2F3002E0443 /* Customer+CoreDataClass.swift in Sources */,
