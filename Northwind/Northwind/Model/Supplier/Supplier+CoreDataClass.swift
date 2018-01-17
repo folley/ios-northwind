@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 @objc(Supplier)
-public class Supplier: NSManagedObject {
+public class Supplier: NWObject {
 
 }
 

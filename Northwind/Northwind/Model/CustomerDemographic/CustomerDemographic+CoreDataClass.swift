@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(CustomerDemographic)
-public class CustomerDemographic: NSManagedObject {
+public class CustomerDemographic: NWObject {
 
 }

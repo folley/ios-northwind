@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(Region)
-public class Region: NSManagedObject {
+public class Region: NWObject {
 
 }

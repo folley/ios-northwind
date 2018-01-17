@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(OrderDetails)
-public class OrderDetails: NSManagedObject {
+public class OrderDetails: NWObject {
 
 }

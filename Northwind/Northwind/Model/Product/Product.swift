@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 @objc(Product)
-public class Product: NSManagedObject {
+public class Product: NWObject {
 
 }
 

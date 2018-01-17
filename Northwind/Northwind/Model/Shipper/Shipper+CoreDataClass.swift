@@ -10,6 +10,6 @@ import Foundation
 import CoreData
 
 @objc(Shipper)
-public class Shipper: NSManagedObject {
+public class Shipper: NWObject {
 
 }
