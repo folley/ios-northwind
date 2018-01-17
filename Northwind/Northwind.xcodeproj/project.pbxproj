@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D3AD73E1FE1DFD1005F6DE3 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AD73C1FE1DFD1005F6DE3 /* Product.swift */; };
 		1D3AD73F1FE1DFD1005F6DE3 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3AD73D1FE1DFD1005F6DE3 /* Product+CoreDataProperties.swift */; };
-		1D682C681FE074BE0090CEB0 /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D682C671FE074BE0090CEB0 /* ProductsTableViewController.swift */; };
+		1D682C681FE074BE0090CEB0 /* ObjectsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D682C671FE074BE0090CEB0 /* ObjectsListViewController.swift */; };
 		1D682C6B1FE077160090CEB0 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D682C691FE077160090CEB0 /* ProductCell.swift */; };
 		1D682C6C1FE077160090CEB0 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D682C6A1FE077160090CEB0 /* ProductCell.xib */; };
 		1D682C761FE08F5C0090CEB0 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D682C751FE08F5C0090CEB0 /* ProductDetailsVC.swift */; };
@@ -17,6 +17,21 @@
 		1DF22A801FE4806800A12744 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A7E1FE4806800A12744 /* Category.swift */; };
 		1DF22A811FE4806800A12744 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A7F1FE4806800A12744 /* Category+CoreDataProperties.swift */; };
 		1DF22A831FE52F2700A12744 /* CategoryDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A821FE52F2700A12744 /* CategoryDetailsVC.swift */; };
+		900447B8200E9B29008AE70F /* TypesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900447B7200E9B29008AE70F /* TypesListViewController.swift */; };
+		900447BA200EB0F2008AE70F /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900447B9200EB0F2008AE70F /* Importer.swift */; };
+		900447C7200EB130008AE70F /* order-details.csv in Resources */ = {isa = PBXBuildFile; fileRef = 900447BC200EB12F008AE70F /* order-details.csv */; };
+		900447C8200EB130008AE70F /* customers.csv in Resources */ = {isa = PBXBuildFile; fileRef = 900447BD200EB12F008AE70F /* customers.csv */; };
+		900447C9200EB130008AE70F /* categories.csv in Resources */ = {isa = PBXBuildFile; fileRef = 900447BE200EB12F008AE70F /* categories.csv */; };
+		900447CA200EB130008AE70F /* regions.csv in Resources */ = {isa = PBXBuildFile; fileRef = 900447BF200EB12F008AE70F /* regions.csv */; };
+		900447CB200EB130008AE70F /* products.csv in Resources */ = {isa = PBXBuildFile; fileRef = 900447C0200EB12F008AE70F /* products.csv */; };
+		900447CC200EB130008AE70F /* orders.csv in Resources */ = {isa = PBXBuildFile; fileRef = 900447C1200EB12F008AE70F /* orders.csv */; };
+		900447CD200EB130008AE70F /* suppliers.csv in Resources */ = {isa = PBXBuildFile; fileRef = 900447C2200EB12F008AE70F /* suppliers.csv */; };
+		900447CE200EB130008AE70F /* employee-territories.csv in Resources */ = {isa = PBXBuildFile; fileRef = 900447C3200EB12F008AE70F /* employee-territories.csv */; };
+		900447CF200EB130008AE70F /* shippers.csv in Resources */ = {isa = PBXBuildFile; fileRef = 900447C4200EB12F008AE70F /* shippers.csv */; };
+		900447D0200EB130008AE70F /* territories.csv in Resources */ = {isa = PBXBuildFile; fileRef = 900447C5200EB12F008AE70F /* territories.csv */; };
+		900447D1200EB130008AE70F /* employees.csv in Resources */ = {isa = PBXBuildFile; fileRef = 900447C6200EB12F008AE70F /* employees.csv */; };
+		900447D9200EBAB4008AE70F /* NWObject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900447D7200EBAB4008AE70F /* NWObject+CoreDataClass.swift */; };
+		900447DA200EBAB4008AE70F /* NWObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900447D8200EBAB4008AE70F /* NWObject+CoreDataProperties.swift */; };
 		900EE0B62000D208002E0443 /* Employee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0AE2000D208002E0443 /* Employee+CoreDataProperties.swift */; };
 		900EE0B72000D208002E0443 /* Employee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0AF2000D208002E0443 /* Employee+CoreDataClass.swift */; };
 		900EE0C22000D2F3002E0443 /* CustomerDemographic+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900EE0BD2000D2F2002E0443 /* CustomerDemographic+CoreDataClass.swift */; };
@@ -58,7 +73,7 @@
 /* Begin PBXFileReference section */
 		1D3AD73C1FE1DFD1005F6DE3 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1D3AD73D1FE1DFD1005F6DE3 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1D682C671FE074BE0090CEB0 /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
+		1D682C671FE074BE0090CEB0 /* ObjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListViewController.swift; sourceTree = "<group>"; };
 		1D682C691FE077160090CEB0 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		1D682C6A1FE077160090CEB0 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		1D682C751FE08F5C0090CEB0 /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
@@ -66,6 +81,21 @@
 		1DF22A7E1FE4806800A12744 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		1DF22A7F1FE4806800A12744 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1DF22A821FE52F2700A12744 /* CategoryDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsVC.swift; sourceTree = "<group>"; };
+		900447B7200E9B29008AE70F /* TypesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesListViewController.swift; sourceTree = "<group>"; };
+		900447B9200EB0F2008AE70F /* Importer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Importer.swift; sourceTree = "<group>"; };
+		900447BC200EB12F008AE70F /* order-details.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "order-details.csv"; sourceTree = "<group>"; };
+		900447BD200EB12F008AE70F /* customers.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = customers.csv; sourceTree = "<group>"; };
+		900447BE200EB12F008AE70F /* categories.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = categories.csv; sourceTree = "<group>"; };
+		900447BF200EB12F008AE70F /* regions.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = regions.csv; sourceTree = "<group>"; };
+		900447C0200EB12F008AE70F /* products.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = products.csv; sourceTree = "<group>"; };
+		900447C1200EB12F008AE70F /* orders.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = orders.csv; sourceTree = "<group>"; };
+		900447C2200EB12F008AE70F /* suppliers.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = suppliers.csv; sourceTree = "<group>"; };
+		900447C3200EB12F008AE70F /* employee-territories.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "employee-territories.csv"; sourceTree = "<group>"; };
+		900447C4200EB12F008AE70F /* shippers.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shippers.csv; sourceTree = "<group>"; };
+		900447C5200EB12F008AE70F /* territories.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = territories.csv; sourceTree = "<group>"; };
+		900447C6200EB12F008AE70F /* employees.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = employees.csv; sourceTree = "<group>"; };
+		900447D7200EBAB4008AE70F /* NWObject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NWObject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		900447D8200EBAB4008AE70F /* NWObject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NWObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		900EE0AE2000D208002E0443 /* Employee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		900EE0AF2000D208002E0443 /* Employee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataClass.swift"; sourceTree = "<group>"; };
 		900EE0BD2000D2F2002E0443 /* CustomerDemographic+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CustomerDemographic+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -120,6 +150,7 @@
 		1D3AD7401FE1E010005F6DE3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				900447DB200EBAB8008AE70F /* NWObject */,
 				900EE0CC2000D303002E0443 /* Order */,
 				900EE0C92000D303002E0443 /* OrderDetails */,
 				900EE0D22000D304002E0443 /* Region */,
@@ -138,8 +169,8 @@
 		1D3AD7411FE1E016005F6DE3 /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				1D3AD73C1FE1DFD1005F6DE3 /* Product.swift */,
 				1D3AD73D1FE1DFD1005F6DE3 /* Product+CoreDataProperties.swift */,
+				1D3AD73C1FE1DFD1005F6DE3 /* Product.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -158,12 +189,13 @@
 			isa = PBXGroup;
 			children = (
 				90E297EA1F9B36BD00193B1F /* ViewController.swift */,
-				1D682C671FE074BE0090CEB0 /* ProductsTableViewController.swift */,
+				1D682C671FE074BE0090CEB0 /* ObjectsListViewController.swift */,
 				1DF22A771FE4800000A12744 /* CategoriesTableViewController.swift */,
 				1D682C751FE08F5C0090CEB0 /* ProductDetailsVC.swift */,
 				1DF22A821FE52F2700A12744 /* CategoryDetailsVC.swift */,
 				90F51D201FE47536003AC266 /* ObjectPickerViewController.swift */,
 				900EE0E42000D851002E0443 /* ItemEditViewController.swift */,
+				900447B7200E9B29008AE70F /* TypesListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,11 +203,38 @@
 		1DF22A7D1FE4803D00A12744 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				1DF22A7E1FE4806800A12744 /* Category.swift */,
 				1DF22A7F1FE4806800A12744 /* Category+CoreDataProperties.swift */,
+				1DF22A7E1FE4806800A12744 /* Category.swift */,
 			);
 			name = Category;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		900447BB200EB12F008AE70F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				900447C0200EB12F008AE70F /* products.csv */,
+				900447BF200EB12F008AE70F /* regions.csv */,
+				900447BE200EB12F008AE70F /* categories.csv */,
+				900447C5200EB12F008AE70F /* territories.csv */,
+				900447C6200EB12F008AE70F /* employees.csv */,
+				900447BC200EB12F008AE70F /* order-details.csv */,
+				900447BD200EB12F008AE70F /* customers.csv */,
+				900447C1200EB12F008AE70F /* orders.csv */,
+				900447C2200EB12F008AE70F /* suppliers.csv */,
+				900447C4200EB12F008AE70F /* shippers.csv */,
+				900447C3200EB12F008AE70F /* employee-territories.csv */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		900447DB200EBAB8008AE70F /* NWObject */ = {
+			isa = PBXGroup;
+			children = (
+				900447D8200EBAB4008AE70F /* NWObject+CoreDataProperties.swift */,
+				900447D7200EBAB4008AE70F /* NWObject+CoreDataClass.swift */,
+			);
+			path = NWObject;
 			sourceTree = "<group>";
 		};
 		900EE0AD2000D208002E0443 /* Employee */ = {
@@ -190,8 +249,8 @@
 		900EE0BC2000D2F2002E0443 /* CustomerDemographic */ = {
 			isa = PBXGroup;
 			children = (
-				900EE0BD2000D2F2002E0443 /* CustomerDemographic+CoreDataClass.swift */,
 				900EE0BE2000D2F2002E0443 /* CustomerDemographic+CoreDataProperties.swift */,
+				900EE0BD2000D2F2002E0443 /* CustomerDemographic+CoreDataClass.swift */,
 			);
 			path = CustomerDemographic;
 			sourceTree = "<group>";
@@ -199,8 +258,8 @@
 		900EE0BF2000D2F2002E0443 /* Customer */ = {
 			isa = PBXGroup;
 			children = (
-				900EE0C02000D2F2002E0443 /* Customer+CoreDataClass.swift */,
 				900EE0C12000D2F2002E0443 /* Customer+CoreDataProperties.swift */,
+				900EE0C02000D2F2002E0443 /* Customer+CoreDataClass.swift */,
 			);
 			path = Customer;
 			sourceTree = "<group>";
@@ -208,8 +267,8 @@
 		900EE0C62000D303002E0443 /* Supplier */ = {
 			isa = PBXGroup;
 			children = (
-				900EE0C72000D303002E0443 /* Supplier+CoreDataClass.swift */,
 				900EE0C82000D303002E0443 /* Supplier+CoreDataProperties.swift */,
+				900EE0C72000D303002E0443 /* Supplier+CoreDataClass.swift */,
 			);
 			path = Supplier;
 			sourceTree = "<group>";
@@ -235,8 +294,8 @@
 		900EE0CF2000D303002E0443 /* Shipper */ = {
 			isa = PBXGroup;
 			children = (
-				900EE0D02000D303002E0443 /* Shipper+CoreDataClass.swift */,
 				900EE0D12000D303002E0443 /* Shipper+CoreDataProperties.swift */,
+				900EE0D02000D303002E0443 /* Shipper+CoreDataClass.swift */,
 			);
 			path = Shipper;
 			sourceTree = "<group>";
@@ -303,6 +362,7 @@
 				90E297F41F9B36BD00193B1F /* LaunchScreen.storyboard */,
 				90E297F71F9B36BD00193B1F /* Info.plist */,
 				90E297EF1F9B36BD00193B1F /* Northwind.xcdatamodeld */,
+				900447BB200EB12F008AE70F /* Resources */,
 			);
 			path = Northwind;
 			sourceTree = "<group>";
@@ -312,6 +372,7 @@
 			children = (
 				90E89C852000CB23002F10BE /* UIStoryboard+Utils.swift */,
 				90E89C882000CB9B002F10BE /* Protocols.swift */,
+				900447B9200EB0F2008AE70F /* Importer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -375,13 +436,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				90E297F61F9B36BD00193B1F /* LaunchScreen.storyboard in Resources */,
+				900447C7200EB130008AE70F /* order-details.csv in Resources */,
 				900EE0EE20010ED7002E0443 /* SingleRelationshipTableViewCell.xib in Resources */,
 				1D682C6C1FE077160090CEB0 /* ProductCell.xib in Resources */,
+				900447C8200EB130008AE70F /* customers.csv in Resources */,
+				900447CD200EB130008AE70F /* suppliers.csv in Resources */,
+				900447C9200EB130008AE70F /* categories.csv in Resources */,
 				90E297F31F9B36BD00193B1F /* Assets.xcassets in Resources */,
 				90E297EE1F9B36BD00193B1F /* Main.storyboard in Resources */,
+				900447D1200EB130008AE70F /* employees.csv in Resources */,
+				900447D0200EB130008AE70F /* territories.csv in Resources */,
+				900447CA200EB130008AE70F /* regions.csv in Resources */,
+				900447CC200EB130008AE70F /* orders.csv in Resources */,
+				900447CF200EB130008AE70F /* shippers.csv in Resources */,
+				900447CE200EB130008AE70F /* employee-territories.csv in Resources */,
 				9048D6A320022D4600089E01 /* BoolEditTableViewCell.xib in Resources */,
 				9048D6A720022EEE00089E01 /* NumberEditTableViewCell.xib in Resources */,
 				900EE0E92001025F002E0443 /* TextEditTableViewCell.xib in Resources */,
+				900447CB200EB130008AE70F /* products.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				900447B8200E9B29008AE70F /* TypesListViewController.swift in Sources */,
 				9048D6A620022EEE00089E01 /* NumberEditTableViewCell.swift in Sources */,
 				900EE0B72000D208002E0443 /* Employee+CoreDataClass.swift in Sources */,
 				90E89C892000CB9B002F10BE /* Protocols.swift in Sources */,
@@ -405,9 +478,10 @@
 				9048D6A220022D4600089E01 /* BoolEditTableViewCell.swift in Sources */,
 				900EE0DD2000D304002E0443 /* Order+CoreDataClass.swift in Sources */,
 				900EE0D92000D304002E0443 /* Supplier+CoreDataProperties.swift in Sources */,
-				1D682C681FE074BE0090CEB0 /* ProductsTableViewController.swift in Sources */,
+				1D682C681FE074BE0090CEB0 /* ObjectsListViewController.swift in Sources */,
 				900EE0E52000D851002E0443 /* ItemEditViewController.swift in Sources */,
 				900EE0DF2000D304002E0443 /* Shipper+CoreDataProperties.swift in Sources */,
+				900447DA200EBAB4008AE70F /* NWObject+CoreDataProperties.swift in Sources */,
 				900EE0B62000D208002E0443 /* Employee+CoreDataProperties.swift in Sources */,
 				1D3AD73E1FE1DFD1005F6DE3 /* Product.swift in Sources */,
 				1D682C6B1FE077160090CEB0 /* ProductCell.swift in Sources */,
@@ -426,6 +500,8 @@
 				90E297E91F9B36BD00193B1F /* AppDelegate.swift in Sources */,
 				900EE0E82001025F002E0443 /* TextEditTableViewCell.swift in Sources */,
 				1D3AD73F1FE1DFD1005F6DE3 /* Product+CoreDataProperties.swift in Sources */,
+				900447BA200EB0F2008AE70F /* Importer.swift in Sources */,
+				900447D9200EBAB4008AE70F /* NWObject+CoreDataClass.swift in Sources */,
 				900EE0E22000D304002E0443 /* Territory+CoreDataProperties.swift in Sources */,
 				90E297F11F9B36BD00193B1F /* Northwind.xcdatamodeld in Sources */,
 				1DF22A781FE4800000A12744 /* CategoriesTableViewController.swift in Sources */,

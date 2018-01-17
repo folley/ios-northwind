@@ -12,3 +12,9 @@ protocol PickerModelDescription: class {
     static func pickerConfiguration() -> PickerConfiguration
     
 }
+
+protocol EditableItemConfiguration: class {
+    associatedtype T
+    static func editConfigurationItems() -> [ItemEditConfiguration<T>.Item]
+}
+
