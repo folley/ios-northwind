@@ -61,6 +61,7 @@
 		9048D6A720022EEE00089E01 /* NumberEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9048D6A520022EEE00089E01 /* NumberEditTableViewCell.xib */; };
 		909BE2392011387500012D28 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909BE2372011387500012D28 /* PhotoTableViewCell.swift */; };
 		909BE23A2011387500012D28 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 909BE2382011387500012D28 /* PhotoTableViewCell.xib */; };
+		909BE23C2011545400012D28 /* UIFont+Defined.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909BE23B2011545400012D28 /* UIFont+Defined.swift */; };
 		90E297E91F9B36BD00193B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E297E81F9B36BD00193B1F /* AppDelegate.swift */; };
 		90E297EB1F9B36BD00193B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E297EA1F9B36BD00193B1F /* ViewController.swift */; };
 		90E297EE1F9B36BD00193B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E297EC1F9B36BD00193B1F /* Main.storyboard */; };
@@ -127,6 +128,7 @@
 		9048D6A520022EEE00089E01 /* NumberEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberEditTableViewCell.xib; sourceTree = "<group>"; };
 		909BE2372011387500012D28 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		909BE2382011387500012D28 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
+		909BE23B2011545400012D28 /* UIFont+Defined.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Defined.swift"; sourceTree = "<group>"; };
 		90E297E51F9B36BD00193B1F /* Northwind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Northwind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E297E81F9B36BD00193B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90E297EA1F9B36BD00193B1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				90E89C852000CB23002F10BE /* UIStoryboard+Utils.swift */,
+				909BE23B2011545400012D28 /* UIFont+Defined.swift */,
 				90E89C882000CB9B002F10BE /* Protocols.swift */,
 				900447B9200EB0F2008AE70F /* Importer.swift */,
 			);
@@ -477,6 +480,7 @@
 				90E89C892000CB9B002F10BE /* Protocols.swift in Sources */,
 				1D682C761FE08F5C0090CEB0 /* ProductDetailsVC.swift in Sources */,
 				900EE0ED20010ED7002E0443 /* SingleRelationshipTableViewCell.swift in Sources */,
+				909BE23C2011545400012D28 /* UIFont+Defined.swift in Sources */,
 				90E297EB1F9B36BD00193B1F /* ViewController.swift in Sources */,
 				1DF22A801FE4806800A12744 /* Category.swift in Sources */,
 				900EE0C42000D2F3002E0443 /* Customer+CoreDataClass.swift in Sources */,

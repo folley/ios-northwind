@@ -175,8 +175,8 @@ class ObjectsListViewController: UITableViewController, NSFetchedResultsControll
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
         
         let object = self.fetchedResultsController.object(at: indexPath) as! NSManagedObject
-        cell.productNameLabel.text = object.value(forKey: configuration.titleKey) as? String
-        cell.priceLabel.text = "---"
+        cell.nameLabel.text = object.value(forKey: configuration.titleKey) as? String
+        cell.descLabel.text = nil
         
         return cell
     }
@@ -208,7 +208,7 @@ class ObjectsListViewController: UITableViewController, NSFetchedResultsControll
 extension ObjectsListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.count > 0 {
-            fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "productName CONTAINS[cd] %@", searchText)
+            fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "\(configuration.titleKey) CONTAINS[cd] %@", searchText)
         } else {
             fetchedResultsController.fetchRequest.predicate = nil
         }

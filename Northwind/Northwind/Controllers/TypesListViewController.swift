@@ -26,6 +26,10 @@ class TypesListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Northwind"
+        
+        tableView.rowHeight = 60.0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,6 +40,8 @@ class TypesListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         
         let conf: ListConfiguration = configurations[indexPath.item]
+        cell.textLabel?.font = UIFont.defaultBold(size: 18.0)
+        
         cell.textLabel?.text = conf.entityName
         
         return cell

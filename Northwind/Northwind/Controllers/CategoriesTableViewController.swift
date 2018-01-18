@@ -72,8 +72,8 @@ class CategoriesTableViewController: UITableViewController, NSFetchedResultsCont
         
         let category = self.fetchedResultsController.object(at: indexPath)
         
-        cell.productNameLabel.text = category.categoryName
-        cell.priceLabel.text = category.categoryDescription
+        cell.nameLabel.text = category.categoryName
+        cell.descLabel.text = category.categoryDescription
         
         return cell
     }

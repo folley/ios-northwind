@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -335,7 +336,7 @@
             </objects>
             <point key="canvasLocation" x="4248.8000000000002" y="17.541229385307346"/>
         </scene>
-        <!--Types List View Controller-->
+        <!--Northwind-->
         <scene sceneID="dmh-sG-W6T">
             <objects>
                 <tableViewController id="FPx-qf-30S" customClass="TypesListViewController" customModule="Northwind" customModuleProvider="target" sceneMemberID="viewController">
@@ -368,7 +369,7 @@
                             <outlet property="delegate" destination="FPx-qf-30S" id="JXs-23-WCN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="utu-8M-thr">
+                    <navigationItem key="navigationItem" title="Northwind" id="utu-8M-thr">
                         <barButtonItem key="leftBarButtonItem" title="Import" id="Vxj-U2-OPf">
                             <connections>
                                 <action selector="didTapImport:" destination="FPx-qf-30S" id="lDM-lQ-c2y"/>
@@ -386,7 +387,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nBJ-OT-8sU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pQ7-5E-cqp">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -403,9 +404,18 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="17y-34-MXQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ap2-bH-OGV">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ap2-bH-OGV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="mainTintColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1062,7 +1072,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OK8-Zi-iN1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5kB-bh-Qye">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1075,6 +1085,11 @@
             <point key="canvasLocation" x="3190.4000000000001" y="913.94302848575717"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="mainTintColor">
+            <color red="0.1940000057220459" green="0.40099999308586121" blue="0.84700000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dLi-7O-Xoc"/>
     </inferredMetricsTieBreakers>

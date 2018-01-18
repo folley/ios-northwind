@@ -76,6 +76,7 @@ UINavigationControllerDelegate {
         setupTableView()
         setupNavigation()
         tableView.keyboardDismissMode = .interactive
+        tableView.rowHeight = 55.0
     }
     
     // MARK:
