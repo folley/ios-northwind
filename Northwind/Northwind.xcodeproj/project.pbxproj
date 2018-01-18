@@ -12,7 +12,6 @@
 		1D682C681FE074BE0090CEB0 /* ObjectsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D682C671FE074BE0090CEB0 /* ObjectsListViewController.swift */; };
 		1D682C6B1FE077160090CEB0 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D682C691FE077160090CEB0 /* ProductCell.swift */; };
 		1D682C6C1FE077160090CEB0 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D682C6A1FE077160090CEB0 /* ProductCell.xib */; };
-		1DF22A781FE4800000A12744 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A771FE4800000A12744 /* CategoriesTableViewController.swift */; };
 		1DF22A801FE4806800A12744 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A7E1FE4806800A12744 /* Category.swift */; };
 		1DF22A811FE4806800A12744 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A7F1FE4806800A12744 /* Category+CoreDataProperties.swift */; };
 		900447B8200E9B29008AE70F /* TypesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900447B7200E9B29008AE70F /* TypesListViewController.swift */; };
@@ -77,7 +76,6 @@
 		1D682C671FE074BE0090CEB0 /* ObjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListViewController.swift; sourceTree = "<group>"; };
 		1D682C691FE077160090CEB0 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		1D682C6A1FE077160090CEB0 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
-		1DF22A771FE4800000A12744 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		1DF22A7E1FE4806800A12744 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		1DF22A7F1FE4806800A12744 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		900447B7200E9B29008AE70F /* TypesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesListViewController.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 			children = (
 				90E297EA1F9B36BD00193B1F /* ViewController.swift */,
 				1D682C671FE074BE0090CEB0 /* ObjectsListViewController.swift */,
-				1DF22A771FE4800000A12744 /* CategoriesTableViewController.swift */,
 				90F51D201FE47536003AC266 /* ObjectPickerViewController.swift */,
 				900EE0E42000D851002E0443 /* ItemEditViewController.swift */,
 				900447B7200E9B29008AE70F /* TypesListViewController.swift */,
@@ -508,7 +505,6 @@
 				900447D9200EBAB4008AE70F /* NWObject+CoreDataClass.swift in Sources */,
 				900EE0E22000D304002E0443 /* Territory+CoreDataProperties.swift in Sources */,
 				90E297F11F9B36BD00193B1F /* Northwind.xcdatamodeld in Sources */,
-				1DF22A781FE4800000A12744 /* CategoriesTableViewController.swift in Sources */,
 				900EE0E12000D304002E0443 /* Region+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
