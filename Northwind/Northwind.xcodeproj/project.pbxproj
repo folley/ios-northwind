@@ -59,6 +59,8 @@
 		9048D6A320022D4600089E01 /* BoolEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9048D6A120022D4600089E01 /* BoolEditTableViewCell.xib */; };
 		9048D6A620022EEE00089E01 /* NumberEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9048D6A420022EEE00089E01 /* NumberEditTableViewCell.swift */; };
 		9048D6A720022EEE00089E01 /* NumberEditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9048D6A520022EEE00089E01 /* NumberEditTableViewCell.xib */; };
+		909BE2392011387500012D28 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909BE2372011387500012D28 /* PhotoTableViewCell.swift */; };
+		909BE23A2011387500012D28 /* PhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 909BE2382011387500012D28 /* PhotoTableViewCell.xib */; };
 		90E297E91F9B36BD00193B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E297E81F9B36BD00193B1F /* AppDelegate.swift */; };
 		90E297EB1F9B36BD00193B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E297EA1F9B36BD00193B1F /* ViewController.swift */; };
 		90E297EE1F9B36BD00193B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90E297EC1F9B36BD00193B1F /* Main.storyboard */; };
@@ -123,6 +125,8 @@
 		9048D6A120022D4600089E01 /* BoolEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoolEditTableViewCell.xib; sourceTree = "<group>"; };
 		9048D6A420022EEE00089E01 /* NumberEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberEditTableViewCell.swift; sourceTree = "<group>"; };
 		9048D6A520022EEE00089E01 /* NumberEditTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberEditTableViewCell.xib; sourceTree = "<group>"; };
+		909BE2372011387500012D28 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
+		909BE2382011387500012D28 /* PhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTableViewCell.xib; sourceTree = "<group>"; };
 		90E297E51F9B36BD00193B1F /* Northwind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Northwind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E297E81F9B36BD00193B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90E297EA1F9B36BD00193B1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -329,6 +333,8 @@
 				9048D6A120022D4600089E01 /* BoolEditTableViewCell.xib */,
 				9048D6A420022EEE00089E01 /* NumberEditTableViewCell.swift */,
 				9048D6A520022EEE00089E01 /* NumberEditTableViewCell.xib */,
+				909BE2372011387500012D28 /* PhotoTableViewCell.swift */,
+				909BE2382011387500012D28 /* PhotoTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 				900447D1200EB130008AE70F /* employees.csv in Resources */,
 				900447D0200EB130008AE70F /* territories.csv in Resources */,
 				900447CA200EB130008AE70F /* regions.csv in Resources */,
+				909BE23A2011387500012D28 /* PhotoTableViewCell.xib in Resources */,
 				900447CC200EB130008AE70F /* orders.csv in Resources */,
 				900447CF200EB130008AE70F /* shippers.csv in Resources */,
 				900447CE200EB130008AE70F /* employee-territories.csv in Resources */,
@@ -498,6 +505,7 @@
 				900EE0C32000D2F3002E0443 /* CustomerDemographic+CoreDataProperties.swift in Sources */,
 				900EE0D82000D304002E0443 /* Supplier+CoreDataClass.swift in Sources */,
 				90E297E91F9B36BD00193B1F /* AppDelegate.swift in Sources */,
+				909BE2392011387500012D28 /* PhotoTableViewCell.swift in Sources */,
 				900EE0E82001025F002E0443 /* TextEditTableViewCell.swift in Sources */,
 				1D3AD73F1FE1DFD1005F6DE3 /* Product+CoreDataProperties.swift in Sources */,
 				900447BA200EB0F2008AE70F /* Importer.swift in Sources */,
