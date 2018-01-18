@@ -65,3 +65,36 @@ Client calls to employe -> Employee will add a new order -> Employee will execut
 3. UIKit
 
 *Database* scheme is built on top of Northwind Database (a sample database that is shipped along with Microsoft Access application).
+
+
+### Logging
+If you want to see underylying SQLite calls that CoreData is making on your behalf, you must enable CoreData logging. To do so, you must edit your Run scheme by adding two arguments passed on launch.
+
+```
+-com.apple.CoreData.SQLDebug 3
+-com.apple.CoreData.Logging.stderr 1
+```
+
+![LoggingImage](DocImages/coreDataLogs.png)
+
+
+### Going deeper - External Storage
+
+As you probably know, storing large binary data in SQL database is not sufficient. However, it would be really helpful to store images and videos in our database just like any other piece of data, rather than manually managing file paths, deletions, redos etc.
+Core Data External Storage comes to the rescue!
+If one of your entity's attributes has type `Binary Data`, you will see an option in Attributes Inspector called `Allows External Storage`. 
+![ExternalStorageCheck](DocImages/externalStorage.png)
+When checked, Core Data will transparently decide whether this piece of data should be stored in the SQLite database or as a external file on disk and keep reference to it.
+All of that happens transparently.
+Don't believe? Let's check.
+
+We've checked that option on `photo` attribute in `Employee` entity.
+Then, we downloaded app data and inspected sqlite database.
+Here's how it looks like:
+![Sqlite](DocImages/externalStorageTerminal.png)
+You will notice that the last value in the row is some kind of identifier. We've never set it so where does it come from?
+
+When you list all the files in the directory where database is located, you will find a hidden directory. Let's see what's inside it.
+![InsideExternal](DocImages/externalFilesTerminal.png)
+
+Surprise! We've just found some binary files saved there using the same identifiers. If you change extensions of those files to eg .png, you will find out that those are exactly the same images we set as an employee's photo :)
