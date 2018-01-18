@@ -12,11 +12,9 @@
 		1D682C681FE074BE0090CEB0 /* ObjectsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D682C671FE074BE0090CEB0 /* ObjectsListViewController.swift */; };
 		1D682C6B1FE077160090CEB0 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D682C691FE077160090CEB0 /* ProductCell.swift */; };
 		1D682C6C1FE077160090CEB0 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D682C6A1FE077160090CEB0 /* ProductCell.xib */; };
-		1D682C761FE08F5C0090CEB0 /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D682C751FE08F5C0090CEB0 /* ProductDetailsVC.swift */; };
 		1DF22A781FE4800000A12744 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A771FE4800000A12744 /* CategoriesTableViewController.swift */; };
 		1DF22A801FE4806800A12744 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A7E1FE4806800A12744 /* Category.swift */; };
 		1DF22A811FE4806800A12744 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A7F1FE4806800A12744 /* Category+CoreDataProperties.swift */; };
-		1DF22A831FE52F2700A12744 /* CategoryDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF22A821FE52F2700A12744 /* CategoryDetailsVC.swift */; };
 		900447B8200E9B29008AE70F /* TypesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900447B7200E9B29008AE70F /* TypesListViewController.swift */; };
 		900447BA200EB0F2008AE70F /* Importer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900447B9200EB0F2008AE70F /* Importer.swift */; };
 		900447C7200EB130008AE70F /* order-details.csv in Resources */ = {isa = PBXBuildFile; fileRef = 900447BC200EB12F008AE70F /* order-details.csv */; };
@@ -79,11 +77,9 @@
 		1D682C671FE074BE0090CEB0 /* ObjectsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsListViewController.swift; sourceTree = "<group>"; };
 		1D682C691FE077160090CEB0 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		1D682C6A1FE077160090CEB0 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
-		1D682C751FE08F5C0090CEB0 /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
 		1DF22A771FE4800000A12744 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		1DF22A7E1FE4806800A12744 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		1DF22A7F1FE4806800A12744 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		1DF22A821FE52F2700A12744 /* CategoryDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsVC.swift; sourceTree = "<group>"; };
 		900447B7200E9B29008AE70F /* TypesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesListViewController.swift; sourceTree = "<group>"; };
 		900447B9200EB0F2008AE70F /* Importer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Importer.swift; sourceTree = "<group>"; };
 		900447BC200EB12F008AE70F /* order-details.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "order-details.csv"; sourceTree = "<group>"; };
@@ -197,8 +193,6 @@
 				90E297EA1F9B36BD00193B1F /* ViewController.swift */,
 				1D682C671FE074BE0090CEB0 /* ObjectsListViewController.swift */,
 				1DF22A771FE4800000A12744 /* CategoriesTableViewController.swift */,
-				1D682C751FE08F5C0090CEB0 /* ProductDetailsVC.swift */,
-				1DF22A821FE52F2700A12744 /* CategoryDetailsVC.swift */,
 				90F51D201FE47536003AC266 /* ObjectPickerViewController.swift */,
 				900EE0E42000D851002E0443 /* ItemEditViewController.swift */,
 				900447B7200E9B29008AE70F /* TypesListViewController.swift */,
@@ -478,7 +472,6 @@
 				9048D6A620022EEE00089E01 /* NumberEditTableViewCell.swift in Sources */,
 				900EE0B72000D208002E0443 /* Employee+CoreDataClass.swift in Sources */,
 				90E89C892000CB9B002F10BE /* Protocols.swift in Sources */,
-				1D682C761FE08F5C0090CEB0 /* ProductDetailsVC.swift in Sources */,
 				900EE0ED20010ED7002E0443 /* SingleRelationshipTableViewCell.swift in Sources */,
 				909BE23C2011545400012D28 /* UIFont+Defined.swift in Sources */,
 				90E297EB1F9B36BD00193B1F /* ViewController.swift in Sources */,
@@ -505,7 +498,6 @@
 				1DF22A811FE4806800A12744 /* Category+CoreDataProperties.swift in Sources */,
 				900EE0C22000D2F3002E0443 /* CustomerDemographic+CoreDataClass.swift in Sources */,
 				90E89C862000CB23002F10BE /* UIStoryboard+Utils.swift in Sources */,
-				1DF22A831FE52F2700A12744 /* CategoryDetailsVC.swift in Sources */,
 				900EE0C32000D2F3002E0443 /* CustomerDemographic+CoreDataProperties.swift in Sources */,
 				900EE0D82000D304002E0443 /* Supplier+CoreDataClass.swift in Sources */,
 				90E297E91F9B36BD00193B1F /* AppDelegate.swift in Sources */,
