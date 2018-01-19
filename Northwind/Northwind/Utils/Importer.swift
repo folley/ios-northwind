@@ -152,12 +152,12 @@ class Importer: NSObject {
     }
     
     func importCustomers(fileText: String) {
-        let lines = fileText.split(separator: "\n")
+        let lines = fileText.split(separator: "\r\n")
         for idx in lines.indices {
             let line = lines[idx]
             if idx == 0 { continue }
             
-            let components = line.split(separator: ",")
+            let components = line.split(separator: ";")
             let id = Int64(components[0])!
             
             let companyName = String(components[1])
