@@ -18,7 +18,8 @@ extension Territory {
     static func listConfiguration() -> ListConfiguration {
         return ListConfiguration(entityName: "Territory",
                                  sortKey: "territoryDescription",
-                                 titleKey: "territoryDescription")
+                                 titleKey: "territoryDescription",
+                                 priceKey: "territoryDescription")
     }
     
 }

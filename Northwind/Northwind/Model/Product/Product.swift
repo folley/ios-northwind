@@ -19,7 +19,8 @@ extension Product {
     static func listConfiguration() -> ListConfiguration {
         return ListConfiguration(entityName: "Product",
                                  sortKey: "productName",
-                                 titleKey: "productName")
+                                 titleKey: "productName",
+                                 priceKey: "unitPrice")
     }
     
 }

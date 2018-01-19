@@ -18,7 +18,8 @@ extension Region {
     static func listConfiguration() -> ListConfiguration {
         return ListConfiguration(entityName: "Region",
                                  sortKey: "regionDescription",
-                                 titleKey: "regionDescription")
+                                 titleKey: "regionDescription",
+                                 priceKey: "regionDescription")
     }
     
 }

@@ -18,7 +18,8 @@ extension CustomerDemographic {
     static func listConfiguration() -> ListConfiguration {
         return ListConfiguration(entityName: "CustomerDemographic",
                                  sortKey: "objectID",
-                                 titleKey: "objectID") // todo:
+                                 titleKey: "objectID",
+                                 priceKey: "objectID") // todo:
     }
     
 }

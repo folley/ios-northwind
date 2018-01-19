@@ -18,7 +18,8 @@ extension Customer {
     static func listConfiguration() -> ListConfiguration {
         return ListConfiguration(entityName: "Customer",
                                  sortKey: "contactName",
-                                 titleKey: "contactName")
+                                 titleKey: "contactName",
+                                 priceKey: "contactName")
     }
     
 }

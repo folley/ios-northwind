@@ -18,7 +18,8 @@ extension OrderDetails {
     static func listConfiguration() -> ListConfiguration {
         return ListConfiguration(entityName: "OrderDetails",
                                  sortKey: "discount",
-                                 titleKey: "discount")
+                                 titleKey: "discount",
+                                 priceKey: "discount")
     }
     
 }

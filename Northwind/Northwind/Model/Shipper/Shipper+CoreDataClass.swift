@@ -18,7 +18,8 @@ extension Shipper {
     static func listConfiguration() -> ListConfiguration {
         return ListConfiguration(entityName: "Shipper",
                                  sortKey: "companyName",
-                                 titleKey: "companyName")
+                                 titleKey: "companyName",
+                                 priceKey: "companyName")
     }
     
 }
