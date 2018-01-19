@@ -19,7 +19,7 @@ extension Employee {
         return ListConfiguration(entityName: "Employee",
                                  sortKey: "lastName",
                                  titleKey: "lastName",
-                                 priceKey: "lastName")
+                                 priceKey: "firstName")
     }
     
 }

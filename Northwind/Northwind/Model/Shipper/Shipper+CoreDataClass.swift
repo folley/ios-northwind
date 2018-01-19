@@ -19,7 +19,7 @@ extension Shipper {
         return ListConfiguration(entityName: "Shipper",
                                  sortKey: "companyName",
                                  titleKey: "companyName",
-                                 priceKey: "companyName")
+                                 priceKey: "phone")
     }
     
 }

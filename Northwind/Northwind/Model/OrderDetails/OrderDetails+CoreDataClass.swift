@@ -19,7 +19,7 @@ extension OrderDetails {
         return ListConfiguration(entityName: "OrderDetails",
                                  sortKey: "discount",
                                  titleKey: "discount",
-                                 priceKey: "discount")
+                                 priceKey: "quantity")
     }
     
 }
