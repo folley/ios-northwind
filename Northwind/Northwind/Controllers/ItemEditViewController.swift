@@ -77,6 +77,8 @@ UINavigationControllerDelegate {
         setupNavigation()
         tableView.keyboardDismissMode = .interactive
         tableView.rowHeight = 55.0
+        
+        self.title = "Object"
     }
     
     // MARK:
