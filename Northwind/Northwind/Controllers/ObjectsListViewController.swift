@@ -14,6 +14,7 @@ struct ListConfiguration {
     
     // for cells
     let titleKey: String
+    let priceKey: String
 }
 
 class ObjectsListViewController: UITableViewController, NSFetchedResultsControllerDelegate {
@@ -175,8 +176,17 @@ class ObjectsListViewController: UITableViewController, NSFetchedResultsControll
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
         
         let object = self.fetchedResultsController.object(at: indexPath) as! NSManagedObject
-        cell.nameLabel.text = object.value(forKey: configuration.titleKey) as? String
-        cell.descLabel.text = nil
+        let name = object.value(forKey: configuration.titleKey) as? String
+        let desc = object.value(forKey: configuration.priceKey) as? String
+        
+        cell.nameLabel.text = name
+        
+        if name != desc {
+            cell.descLabel.text = desc
+        }
+        else {
+            cell.descLabel.text = ""
+        }
         
         return cell
     }
