@@ -18,7 +18,8 @@ extension Category {
     static func listConfiguration() -> ListConfiguration {
         return ListConfiguration(entityName: "Category",
                                  sortKey: "categoryName",
-                                 titleKey: "categoryName")
+                                 titleKey: "categoryName",
+                                 priceKey: "categoryDescription")
     }
     
 }
