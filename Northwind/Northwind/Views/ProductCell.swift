@@ -20,8 +20,8 @@ class ProductCell: UITableViewCell {
         cardView.layer.cornerRadius = 5
         cardView.layer.shadowColor = UIColor.black.cgColor
         cardView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        cardView.layer.shadowOpacity = 0.2
-        cardView.layer.shadowRadius = 5.0
+        cardView.layer.shadowOpacity = 0.1
+        cardView.layer.shadowRadius = 3.0
         cardView.layer.masksToBounds =  false
     }
 
