@@ -30,7 +30,7 @@ class ObjectsListViewController: UITableViewController, NSFetchedResultsControll
         fetchRequest.sortDescriptors = [sort];
         let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                                    managedObjectContext: managedContext,
-                                                                   sectionNameKeyPath: nil,
+                                                                   sectionNameKeyPath: nil,//configuration.sortKey,
                                                                    cacheName: nil)
         aFetchedResultsController.delegate = self
         
@@ -167,6 +167,10 @@ class ObjectsListViewController: UITableViewController, NSFetchedResultsControll
 
     // MARK: - Table view data source
 
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return self.fetchedResultsController.sections!.count
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let info = self.fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
         return info.numberOfObjects
@@ -176,7 +180,12 @@ class ObjectsListViewController: UITableViewController, NSFetchedResultsControll
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
         
         let object = self.fetchedResultsController.object(at: indexPath) as! NSManagedObject
-        let name = object.value(forKey: configuration.titleKey) as? String
+        var name = object.value(forKey: configuration.titleKey) as? String
+        
+        if let number = object.value(forKey: configuration.titleKey) as? NSDecimalNumber {
+            name = number.stringValue
+        }
+        
         let desc = object.value(forKey: configuration.priceKey) as? String
         
         cell.nameLabel.text = name
@@ -213,6 +222,8 @@ class ObjectsListViewController: UITableViewController, NSFetchedResultsControll
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
     }
+    
+    //tableindex
 }
 
 extension ObjectsListViewController: UISearchBarDelegate {

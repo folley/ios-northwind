@@ -20,12 +20,16 @@ struct ItemEditConfiguration<T> {
         let writeKeyPath: String?
         let customClass: AnyClass?
         
+        let multipleRelationship: Bool
+        
         init(keyPath: AnyKeyPath, name: String,
-             writeKeyPath: String? = nil, customClass: AnyClass? = nil) {
+             writeKeyPath: String? = nil, customClass: AnyClass? = nil,
+             multipleRelationship: Bool = false) {
             self.keyPath = keyPath
             self.writeKeyPath = writeKeyPath
             self.name = name
             self.customClass = customClass
+            self.multipleRelationship = multipleRelationship
         }
     }
     
@@ -39,6 +43,7 @@ private enum CellType {
     case boolCell
     case imageCell
     case singleRelationship
+    case multipleRelationship
     
     func cellIdentifier() -> String {
         switch self {
@@ -47,6 +52,7 @@ private enum CellType {
         case .boolCell: return "boolCell"
         case .singleRelationship: return "singleRelationship"
         case .imageCell: return "imageCell"
+        case .multipleRelationship: return "multipleRelationship"
         }
     }
     
@@ -56,6 +62,7 @@ private enum CellType {
         case .numberCell: return UINib(nibName: "NumberEditTableViewCell", bundle: nil)
         case .boolCell: return UINib(nibName: "BoolEditTableViewCell", bundle: nil)
         case .singleRelationship: return UINib(nibName: "SingleRelationshipTableViewCell", bundle: nil)
+        case .multipleRelationship: return UINib(nibName: "SingleRelationshipTableViewCell", bundle: nil)
         case .imageCell: return UINib(nibName: "PhotoTableViewCell", bundle: nil)
         }
     }
@@ -94,6 +101,7 @@ UINavigationControllerDelegate {
                                           .numberCell,
                                           .boolCell,
                                           .singleRelationship,
+                                          .multipleRelationship,
                                           .imageCell]
         for type in supportedTypes{
             tableView.register(type.nib(),
@@ -145,6 +153,14 @@ UINavigationControllerDelegate {
                 activePickerItem = item
                 navigationController?.pushViewController(vc, animated: true)
             }
+        case .multipleRelationship:
+            if let pickerDesc = item.customClass as? PickerModelDescription.Type {
+                let vc = UIStoryboard.pickerVC()
+                vc.delegate = self
+                vc.configuration = pickerDesc.pickerConfiguration()
+                activePickerItem = item
+                navigationController?.pushViewController(vc, animated: true)
+            }
         default:
             break
         }
@@ -171,14 +187,20 @@ UINavigationControllerDelegate {
         else if item.customClass == NSData.self {
             cellType = .imageCell
         }
+        else if item.multipleRelationship {
+            // TODO:
+            return .multipleRelationship
+        }
         else if value is NSManagedObject {// || value is NSManagedObject? {
             cellType = .singleRelationship
         }
-        
-        else {
-            // TODO:
-            return .singleRelationship
+        else if value is NSSet {
+            cellType = .singleRelationship
         }
+        else {
+            cellType = .singleRelationship
+        }
+        
         
         return cellType!
     }
@@ -251,10 +273,15 @@ UINavigationControllerDelegate {
         else if let relationshipCell = cell as? SingleRelationshipTableViewCell {
             relationshipCell.textLabel?.text = name
             
-            if let pickerDesc = item.customClass as? PickerModelDescription.Type {
-                let descriptionKey = pickerDesc.pickerConfiguration().descriptionKey
-                let desc = (value as? NSObject)?.value(forKeyPath: descriptionKey) as? String
-                relationshipCell.detailTextLabel?.text = desc
+            if item.multipleRelationship {
+                
+            }
+            else {
+                if let pickerDesc = item.customClass as? PickerModelDescription.Type {
+                    let descriptionKey = pickerDesc.pickerConfiguration().descriptionKey
+                    let desc = (value as? NSObject)?.value(forKeyPath: descriptionKey) as? String
+                    relationshipCell.detailTextLabel?.text = desc
+                }
             }
         }
         else if let imageCell = cell as? PhotoTableViewCell {

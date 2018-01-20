@@ -65,7 +65,8 @@ extension ObjectPickerViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         let item = fetchedResultsController.fetchedObjects![indexPath.item]
         
-        cell.textLabel?.text = item.value(forKey: configuration.descriptionKey) as? String
+        
+        cell.textLabel?.text = item.value(forKeyPath: configuration.descriptionKey) as? String
         
         return cell
     }
