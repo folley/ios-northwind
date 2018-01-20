@@ -20,5 +20,6 @@ extension OrderDetails {
     @NSManaged public var quantity: Int16
     @NSManaged public var unitPrice: NSDecimalNumber?
     @NSManaged public var order: Order?
+    @NSManaged public var product: Product?
 
 }

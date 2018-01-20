@@ -69,6 +69,7 @@
         <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="unitPrice" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
         <relationship name="order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="orderDetails" inverseEntity="Order" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="details" inverseEntity="Product" syncable="YES"/>
     </entity>
     <entity name="Product" representedClassName="Product" parentEntity="NWObject" syncable="YES">
         <attribute name="discontinued" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
@@ -79,6 +80,7 @@
         <attribute name="unitsInStock" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="unitsOnOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="products" inverseEntity="Category" syncable="YES"/>
+        <relationship name="details" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderDetails" inverseName="product" inverseEntity="OrderDetails" syncable="YES"/>
         <relationship name="supplier" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Supplier" inverseName="products" inverseEntity="Supplier" syncable="YES"/>
     </entity>
     <entity name="Region" representedClassName="Region" parentEntity="NWObject" syncable="YES">
@@ -116,8 +118,8 @@
         <element name="Employee" positionX="45" positionY="-270" width="128" height="30"/>
         <element name="NWObject" positionX="-126" positionY="-117" width="128" height="60"/>
         <element name="Order" positionX="43" positionY="125" width="128" height="255"/>
-        <element name="OrderDetails" positionX="-144" positionY="65" width="128" height="105"/>
-        <element name="Product" positionX="-324" positionY="20" width="128" height="180"/>
+        <element name="OrderDetails" positionX="-144" positionY="65" width="128" height="120"/>
+        <element name="Product" positionX="-324" positionY="20" width="128" height="195"/>
         <element name="Region" positionX="-144" positionY="-189" width="128" height="75"/>
         <element name="Shipper" positionX="-144" positionY="290" width="128" height="90"/>
         <element name="Supplier" positionX="-315" positionY="-261" width="128" height="225"/>
