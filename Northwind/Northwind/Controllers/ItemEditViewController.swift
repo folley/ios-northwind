@@ -20,12 +20,16 @@ struct ItemEditConfiguration<T> {
         let writeKeyPath: String?
         let customClass: AnyClass?
         
+        let multipleRelationship: Bool
+        
         init(keyPath: AnyKeyPath, name: String,
-             writeKeyPath: String? = nil, customClass: AnyClass? = nil) {
+             writeKeyPath: String? = nil, customClass: AnyClass? = nil,
+             multipleRelationship: Bool = false) {
             self.keyPath = keyPath
             self.writeKeyPath = writeKeyPath
             self.name = name
             self.customClass = customClass
+            self.multipleRelationship = multipleRelationship
         }
     }
     
@@ -37,7 +41,9 @@ private enum CellType {
     case stringCell
     case numberCell
     case boolCell
+    case imageCell
     case singleRelationship
+    case multipleRelationship
     
     func cellIdentifier() -> String {
         switch self {
@@ -45,6 +51,8 @@ private enum CellType {
         case .numberCell: return "numberCell"
         case .boolCell: return "boolCell"
         case .singleRelationship: return "singleRelationship"
+        case .imageCell: return "imageCell"
+        case .multipleRelationship: return "multipleRelationship"
         }
     }
     
@@ -54,14 +62,19 @@ private enum CellType {
         case .numberCell: return UINib(nibName: "NumberEditTableViewCell", bundle: nil)
         case .boolCell: return UINib(nibName: "BoolEditTableViewCell", bundle: nil)
         case .singleRelationship: return UINib(nibName: "SingleRelationshipTableViewCell", bundle: nil)
+        case .multipleRelationship: return UINib(nibName: "SingleRelationshipTableViewCell", bundle: nil)
+        case .imageCell: return UINib(nibName: "PhotoTableViewCell", bundle: nil)
         }
     }
 }
 
-class ItemEditViewController<T: NSManagedObject>: UITableViewController {
+class ItemEditViewController<T: NSManagedObject>: UITableViewController,
+UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
 
     var configuration: ItemEditConfiguration<T>!
     var activePickerItem: ItemEditConfiguration<T>.Item?
+    private var didSelectImage: ((UIImage) -> Void)?
     
     // MARK: View Lifecycle
     override func viewDidLoad() {
@@ -69,6 +82,10 @@ class ItemEditViewController<T: NSManagedObject>: UITableViewController {
         
         setupTableView()
         setupNavigation()
+        tableView.keyboardDismissMode = .interactive
+        tableView.rowHeight = 55.0
+        
+        self.title = "Object"
     }
     
     // MARK:
@@ -83,7 +100,9 @@ class ItemEditViewController<T: NSManagedObject>: UITableViewController {
         let supportedTypes: [CellType] = [.stringCell,
                                           .numberCell,
                                           .boolCell,
-                                          .singleRelationship]
+                                          .singleRelationship,
+                                          .multipleRelationship,
+                                          .imageCell]
         for type in supportedTypes{
             tableView.register(type.nib(),
                                forCellReuseIdentifier: type.cellIdentifier())
@@ -134,6 +153,14 @@ class ItemEditViewController<T: NSManagedObject>: UITableViewController {
                 activePickerItem = item
                 navigationController?.pushViewController(vc, animated: true)
             }
+        case .multipleRelationship:
+            if let pickerDesc = item.customClass as? PickerModelDescription.Type {
+                let vc = UIStoryboard.pickerVC()
+                vc.delegate = self
+                vc.configuration = pickerDesc.pickerConfiguration()
+                activePickerItem = item
+                navigationController?.pushViewController(vc, animated: true)
+            }
         default:
             break
         }
@@ -157,9 +184,23 @@ class ItemEditViewController<T: NSManagedObject>: UITableViewController {
         else if valueType == Bool.self || valueType == Bool?.self {
             cellType = .boolCell
         }
-        else if value is NSManagedObject || value is NSManagedObject? {
+        else if item.customClass == NSData.self {
+            cellType = .imageCell
+        }
+        else if item.multipleRelationship {
+            // TODO:
+            return .multipleRelationship
+        }
+        else if value is NSManagedObject {// || value is NSManagedObject? {
             cellType = .singleRelationship
         }
+        else if value is NSSet {
+            cellType = .singleRelationship
+        }
+        else {
+            cellType = .singleRelationship
+        }
+        
         
         return cellType!
     }
@@ -232,12 +273,35 @@ class ItemEditViewController<T: NSManagedObject>: UITableViewController {
         else if let relationshipCell = cell as? SingleRelationshipTableViewCell {
             relationshipCell.textLabel?.text = name
             
-            if let pickerDesc = item.customClass as? PickerModelDescription.Type {
-                let descriptionKey = pickerDesc.pickerConfiguration().descriptionKey
-                let desc = (value as? NSObject)?.value(forKeyPath: descriptionKey) as? String
-                relationshipCell.detailTextLabel?.text = desc
+            if item.multipleRelationship {
+                
             }
-            
+            else {
+                if let pickerDesc = item.customClass as? PickerModelDescription.Type {
+                    let descriptionKey = pickerDesc.pickerConfiguration().descriptionKey
+                    let desc = (value as? NSObject)?.value(forKeyPath: descriptionKey) as? String
+                    relationshipCell.detailTextLabel?.text = desc
+                }
+            }
+        }
+        else if let imageCell = cell as? PhotoTableViewCell {
+            imageCell.titleLabel.text = name
+            if let data = (value as? Data) {
+                let image = UIImage(data: data)
+                imageCell.photoImageView.image = image
+            }
+            else {
+                imageCell.photoImageView.image = nil
+            }
+            imageCell.didSelect = { [weak self] in
+                let pickerVC = UIImagePickerController()
+                pickerVC.delegate = self
+                self?.didSelectImage = { (image) in
+                    let data = UIImageJPEGRepresentation(image, 1.0)
+                    object.setValue(data, forKeyPath: item.writeKeyPath!)
+                }
+                self?.present(pickerVC, animated: true, completion: nil)
+            }
         }
     }
     
@@ -285,13 +349,29 @@ class ItemEditViewController<T: NSManagedObject>: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    // MARK: UIImagePickerControllerDelegate
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            didSelectImage?(image)
+            didSelectImage = nil
+            tableView.reloadData()
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension ItemEditViewController: ObjectPickerDelegate {
     func objectPicker(_ picker: ObjectPickerViewController, didPick item: NSManagedObject) {
         let object = configuration.object
-
+        
         // :( Don't know how to make it with type-safe key paths
         object.setValue(item, forKeyPath: activePickerItem!.writeKeyPath!)
         activePickerItem = nil
@@ -319,3 +399,4 @@ extension ItemEditViewController {
         return number
     }
 }
+

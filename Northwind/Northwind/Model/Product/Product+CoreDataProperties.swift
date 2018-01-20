@@ -25,5 +25,6 @@ extension Product {
     @NSManaged public var unitsOnOrder: Int16
     @NSManaged public var category: Category?
     @NSManaged public var supplier: Supplier?
+    @NSManaged public var details: NSSet?
 
 }

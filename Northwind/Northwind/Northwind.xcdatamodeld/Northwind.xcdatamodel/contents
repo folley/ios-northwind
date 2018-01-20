@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Category" representedClassName="Category" syncable="YES">
+    <entity name="Category" representedClassName="Category" parentEntity="NWObject" syncable="YES">
         <attribute name="categoryDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="categoryName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="picture" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="category" inverseEntity="Product" syncable="YES"/>
     </entity>
-    <entity name="Customer" representedClassName="Customer" syncable="YES">
+    <entity name="Customer" representedClassName="Customer" parentEntity="NWObject" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,10 +20,10 @@
         <relationship name="demographics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CustomerDemographic" inverseName="customers" inverseEntity="CustomerDemographic" syncable="YES"/>
         <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="customer" inverseEntity="Order" syncable="YES"/>
     </entity>
-    <entity name="CustomerDemographic" representedClassName="CustomerDemographic" syncable="YES">
+    <entity name="CustomerDemographic" representedClassName="CustomerDemographic" parentEntity="NWObject" syncable="YES">
         <relationship name="customers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Customer" inverseName="demographics" inverseEntity="Customer" syncable="YES"/>
     </entity>
-    <entity name="Employee" representedClassName="Employee" syncable="YES">
+    <entity name="Employee" representedClassName="Employee" parentEntity="NWObject" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="birthDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
@@ -34,7 +34,7 @@
         <attribute name="homePhone" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="photoPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postalCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
@@ -45,7 +45,10 @@
         <relationship name="reportsTo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Employee" inverseName="managedEmployees" inverseEntity="Employee" syncable="YES"/>
         <relationship name="territories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Territory" inverseName="employees" inverseEntity="Territory" syncable="YES"/>
     </entity>
-    <entity name="Order" representedClassName="Order" syncable="YES">
+    <entity name="NWObject" representedClassName="NWObject" syncable="YES">
+        <attribute name="uniqueId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Order" representedClassName="Order" parentEntity="NWObject" syncable="YES">
         <attribute name="freight" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="orderDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="requiredDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -61,13 +64,14 @@
         <relationship name="orderDetails" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderDetails" inverseName="order" inverseEntity="OrderDetails" syncable="YES"/>
         <relationship name="shipVia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Shipper" inverseName="orders" inverseEntity="Shipper" syncable="YES"/>
     </entity>
-    <entity name="OrderDetails" representedClassName="OrderDetails" syncable="YES">
+    <entity name="OrderDetails" representedClassName="OrderDetails" parentEntity="NWObject" syncable="YES">
         <attribute name="discount" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="unitPrice" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
         <relationship name="order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="orderDetails" inverseEntity="Order" syncable="YES"/>
+        <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="details" inverseEntity="Product" syncable="YES"/>
     </entity>
-    <entity name="Product" representedClassName="Product" syncable="YES">
+    <entity name="Product" representedClassName="Product" parentEntity="NWObject" syncable="YES">
         <attribute name="discontinued" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quantityPerUnit" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -76,18 +80,19 @@
         <attribute name="unitsInStock" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="unitsOnOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="products" inverseEntity="Category" syncable="YES"/>
+        <relationship name="details" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderDetails" inverseName="product" inverseEntity="OrderDetails" syncable="YES"/>
         <relationship name="supplier" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Supplier" inverseName="products" inverseEntity="Supplier" syncable="YES"/>
     </entity>
-    <entity name="Region" representedClassName="Region" syncable="YES">
+    <entity name="Region" representedClassName="Region" parentEntity="NWObject" syncable="YES">
         <attribute name="regionDescription" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="territories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Territory" inverseName="region" inverseEntity="Territory" syncable="YES"/>
     </entity>
-    <entity name="Shipper" representedClassName="Shipper" syncable="YES">
+    <entity name="Shipper" representedClassName="Shipper" parentEntity="NWObject" syncable="YES">
         <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="orders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Order" inverseName="shipVia" inverseEntity="Order" syncable="YES"/>
     </entity>
-    <entity name="Supplier" representedClassName="Supplier" syncable="YES">
+    <entity name="Supplier" representedClassName="Supplier" parentEntity="NWObject" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
@@ -101,7 +106,7 @@
         <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Product" inverseName="supplier" inverseEntity="Product" syncable="YES"/>
     </entity>
-    <entity name="Territory" representedClassName="Territory" syncable="YES">
+    <entity name="Territory" representedClassName="Territory" parentEntity="NWObject" syncable="YES">
         <attribute name="territoryDescription" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="employees" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Employee" inverseName="territories" inverseEntity="Employee" syncable="YES"/>
         <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="territories" inverseEntity="Region" syncable="YES"/>
@@ -110,10 +115,11 @@
         <element name="Category" positionX="-317" positionY="266" width="128" height="105"/>
         <element name="Customer" positionX="223" positionY="153" width="128" height="225"/>
         <element name="CustomerDemographic" positionX="225" positionY="23" width="128" height="60"/>
-        <element name="Employee" positionX="45" positionY="-270" width="128" height="345"/>
+        <element name="Employee" positionX="45" positionY="-270" width="128" height="30"/>
+        <element name="NWObject" positionX="-126" positionY="-117" width="128" height="60"/>
         <element name="Order" positionX="43" positionY="125" width="128" height="255"/>
-        <element name="OrderDetails" positionX="-144" positionY="65" width="128" height="105"/>
-        <element name="Product" positionX="-324" positionY="20" width="128" height="180"/>
+        <element name="OrderDetails" positionX="-144" positionY="65" width="128" height="120"/>
+        <element name="Product" positionX="-324" positionY="20" width="128" height="195"/>
         <element name="Region" positionX="-144" positionY="-189" width="128" height="75"/>
         <element name="Shipper" positionX="-144" positionY="290" width="128" height="90"/>
         <element name="Supplier" positionX="-315" positionY="-261" width="128" height="225"/>
